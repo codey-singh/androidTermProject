@@ -1,6 +1,6 @@
 package com.example.androidtermproject.models;
 
-class Employee {
+public class Employee {
 
     Employee(String name, int age, int birthYear, double monthlySalary, double rate) {
         this.name = name;
