@@ -8,7 +8,7 @@ public class MemDataStoreSingleton {
     private static MemDataStoreSingleton instance;
 
     public static MemDataStoreSingleton getInstance() {
-        if (instance != null) {
+        if (instance == null) {
             instance = new MemDataStoreSingleton();
         }
         return instance;
