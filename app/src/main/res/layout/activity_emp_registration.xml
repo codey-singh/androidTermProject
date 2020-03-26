@@ -49,114 +49,114 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="59dp"
+        android:id="@+id/EmpFirstName"
+        android:layout_width="wrap_content"
         android:layout_height="24dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
-        android:text="TextView"
+        android:text="Employee First Name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/lastName"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
-        android:text="TextView"
+        android:text="Employee Last Name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/EmpFirstName" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/empBirthYear"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
-        android:text="TextView"
+        android:text="Employee Birth Year"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/lastName" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/empMonthlySalary"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
-        android:text="TextView"
+        android:text="Monthly Salary"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/empBirthYear" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/empOccupationRate"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
-        android:text="TextView"
+        android:text="Occupation Rate"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/empMonthlySalary" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/empID"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
-        android:text="TextView"
+        android:text="Employee ID"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/empOccupationRate" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/empType"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
-        android:text="TextView"
+        android:text="Employee Type"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/empID" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/empVehicle"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
-        android:text="TextView"
+        android:text="Vehicle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/empType" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/emp#"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
-        android:text="TextView"
+        android:text="emp#"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/empVehicle" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/empPlateNumber"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
-        android:text="TextView"
+        android:text="Plate Number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/empVehicleColor"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
-        android:text="TextView"
+        android:text="Vehicle Color"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/empPlateNumber" />
 
     <TextView
         android:id="@+id/textView12"
@@ -164,9 +164,9 @@
         android:layout_height="0dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
-        android:text="TextView"
+        android:text="Vehicle Model"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/emp#" />
 
     <TextView
         android:id="@+id/textView13"
@@ -191,7 +191,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="First Name"
-        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/EmpFirstName"
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
     <EditText
@@ -202,129 +202,128 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
+        android:text="Last Name"
+        app:layout_constraintStart_toEndOf="@+id/lastName"
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/birthyear"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="28dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
+        android:text="Birth Year"
+        app:layout_constraintStart_toEndOf="@+id/empBirthYear"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/monthlySalary"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        android:text="Monthly Salary"
+        app:layout_constraintStart_toEndOf="@+id/empMonthlySalary"
+        app:layout_constraintTop_toBottomOf="@+id/birthyear" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/occupationRate"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="28dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        android:text="Occupation Rate"
+        app:layout_constraintStart_toEndOf="@+id/empOccupationRate"
+        app:layout_constraintTop_toBottomOf="@+id/monthlySalary" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/employeeID"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+        android:text="Employee ID"
+        app:layout_constraintStart_toEndOf="@+id/empID"
+        app:layout_constraintTop_toBottomOf="@+id/occupationRate" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/employeeType"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="12dp"
-        app:layout_constraintStart_toEndOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/editText6" />
+        app:layout_constraintStart_toEndOf="@+id/empType"
+        app:layout_constraintTop_toBottomOf="@+id/employeeID" />
 
     <RadioButton
-        android:id="@+id/radioButton"
+        android:id="@+id/car"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="20dp"
-        android:text="RadioButton"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        android:text="Car"
+        app:layout_constraintStart_toEndOf="@+id/empVehicle"
+        app:layout_constraintTop_toBottomOf="@+id/employeeType" />
 
     <RadioButton
-        android:id="@+id/radioButton2"
+        android:id="@+id/motorbike"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginTop="20dp"
-        android:text="RadioButton"
-        app:layout_constraintStart_toEndOf="@+id/radioButton"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        android:text="Motor Bike"
+        app:layout_constraintStart_toEndOf="@+id/car"
+        app:layout_constraintTop_toBottomOf="@+id/employeeType" />
 
     <EditText
         android:id="@+id/editText7"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton" />
+        app:layout_constraintStart_toEndOf="@+id/emp#"
+        app:layout_constraintTop_toBottomOf="@+id/car" />
 
     <EditText
-        android:id="@+id/editText8"
+        android:id="@+id/model"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="Model"
         app:layout_constraintStart_toEndOf="@+id/textView12"
         app:layout_constraintTop_toBottomOf="@+id/editText7" />
 
     <EditText
-        android:id="@+id/editText9"
+        android:id="@+id/plateNumber"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintStart_toEndOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/editText8" />
+        android:text="Plate Number"
+        app:layout_constraintStart_toEndOf="@+id/empPlateNumber"
+        app:layout_constraintTop_toBottomOf="@+id/model" />
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/color"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginStart="64dp"
         android:layout_marginTop="12dp"
-        app:layout_constraintStart_toEndOf="@+id/textView11"
-        app:layout_constraintTop_toBottomOf="@+id/editText9" />
+        app:layout_constraintStart_toEndOf="@+id/empVehicleColor"
+        app:layout_constraintTop_toBottomOf="@+id/plateNumber" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
