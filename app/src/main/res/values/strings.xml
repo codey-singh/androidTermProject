@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">AndroidTermProject</string>
+    <string-array name="EmployeeType">
+        <item>Choose a Type</item>
+        <item>Manager</item>
+        <item>Tester</item>
+        <item>Programmer</item>
+    </string-array>
+    <string-array name="color">
+        <item>Choose a color</item>
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Yellow</item>
+        <item>Green</item>
+        <item>Orange</item>
+        <item>Purple</item>
+        <item>Pink</item>
+        <item>Brown</item>
+        <item>White</item>
+        <item>Black</item>
+        <item>Beige</item>
+    </string-array>
 </resources>

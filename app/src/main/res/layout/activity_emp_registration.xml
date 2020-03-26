@@ -55,6 +55,8 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
         android:text="Employee First Name"
+        app:layout_constraintEnd_toStartOf="@+id/editText"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
@@ -65,6 +67,8 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
         android:text="Employee Last Name"
+        app:layout_constraintEnd_toStartOf="@+id/editText2"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EmpFirstName" />
 
@@ -75,6 +79,8 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
         android:text="Employee Birth Year"
+        app:layout_constraintEnd_toStartOf="@+id/birthyear"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lastName" />
 
@@ -85,6 +91,8 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
         android:text="Monthly Salary"
+        app:layout_constraintEnd_toStartOf="@+id/monthlySalary"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/empBirthYear" />
 
@@ -95,6 +103,8 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
         android:text="Occupation Rate"
+        app:layout_constraintEnd_toStartOf="@+id/occupationRate"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/empMonthlySalary" />
 
@@ -105,6 +115,8 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
         android:text="Employee ID"
+        app:layout_constraintEnd_toStartOf="@+id/employeeID"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/empOccupationRate" />
 
@@ -115,6 +127,8 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
         android:text="Employee Type"
+        app:layout_constraintEnd_toStartOf="@+id/employeeType"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/empID" />
 
@@ -125,16 +139,20 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
         android:text="Vehicle"
+        app:layout_constraintEnd_toStartOf="@+id/car"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/empType" />
 
     <TextView
-        android:id="@+id/emp#"
+        android:id="@+id/empnum"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
         android:text="emp#"
+        app:layout_constraintEnd_toStartOf="@+id/editText7"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/empVehicle" />
 
@@ -145,6 +163,8 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
         android:text="Plate Number"
+        app:layout_constraintEnd_toStartOf="@+id/plateNumber"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
@@ -155,6 +175,8 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
         android:text="Vehicle Color"
+        app:layout_constraintEnd_toStartOf="@+id/color"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/empPlateNumber" />
 
@@ -165,8 +187,10 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
         android:text="Vehicle Model"
+        app:layout_constraintEnd_toStartOf="@+id/model"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emp#" />
+        app:layout_constraintTop_toBottomOf="@+id/empnum" />
 
     <TextView
         android:id="@+id/textView13"
@@ -191,6 +215,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="First Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/EmpFirstName"
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
@@ -203,6 +229,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Last Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/lastName"
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
@@ -215,6 +243,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Birth Year"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/empBirthYear"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
@@ -227,6 +257,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Monthly Salary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/empMonthlySalary"
         app:layout_constraintTop_toBottomOf="@+id/birthyear" />
 
@@ -238,6 +270,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Occupation Rate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/empOccupationRate"
         app:layout_constraintTop_toBottomOf="@+id/monthlySalary" />
 
@@ -250,6 +284,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Employee ID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/empID"
         app:layout_constraintTop_toBottomOf="@+id/occupationRate" />
 
@@ -259,6 +295,10 @@
         android:layout_height="30dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="12dp"
+        android:drawSelectorOnTop="true"
+        android:entries="@array/EmployeeType"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/empType"
         app:layout_constraintTop_toBottomOf="@+id/employeeID" />
 
@@ -269,6 +309,8 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="20dp"
         android:text="Car"
+        app:layout_constraintEnd_toStartOf="@+id/motorbike"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/empVehicle"
         app:layout_constraintTop_toBottomOf="@+id/employeeType" />
 
@@ -290,7 +332,9 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        app:layout_constraintStart_toEndOf="@+id/emp#"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/empnum"
         app:layout_constraintTop_toBottomOf="@+id/car" />
 
     <EditText
@@ -302,6 +346,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Model"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView12"
         app:layout_constraintTop_toBottomOf="@+id/editText7" />
 
@@ -314,6 +360,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Plate Number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/empPlateNumber"
         app:layout_constraintTop_toBottomOf="@+id/model" />
 
@@ -323,6 +371,10 @@
         android:layout_height="30dp"
         android:layout_marginStart="64dp"
         android:layout_marginTop="12dp"
+        android:drawSelectorOnTop="true"
+        android:entries="@array/color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/empVehicleColor"
         app:layout_constraintTop_toBottomOf="@+id/plateNumber" />
 
