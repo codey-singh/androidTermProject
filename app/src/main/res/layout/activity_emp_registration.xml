@@ -6,59 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".EmpRegistrationActivity">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="395dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="53dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="657dp" />
-
     <Button
         android:id="@+id/REGISTER"
         android:layout_width="206dp"
         android:layout_height="42dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="116dp"
         android:text="REGISTER"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/guideline4"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/EmpFirstName"
         android:layout_width="wrap_content"
         android:layout_height="24dp"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="24dp"
         android:text="Employee First Name"
         app:layout_constraintEnd_toStartOf="@+id/editText"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+        tools:layout_editor_absoluteY="77dp" />
 
     <TextView
         android:id="@+id/lastName"
@@ -196,14 +162,10 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="170dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="170dp"
-        android:layout_marginBottom="8dp"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
@@ -211,14 +173,13 @@
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="24dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="First Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/EmpFirstName"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+        tools:layout_editor_absoluteY="77dp" />
 
     <EditText
         android:id="@+id/editText2"
