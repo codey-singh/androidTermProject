@@ -2,7 +2,7 @@ package com.example.androidtermproject.models;
 
 public class Tester extends Employee {
 
-    public Tester(String name, int age, int birthYear, double monthlySalary, double rate, int nbBugs) {
+    public Tester(int id, String name, int age, int birthYear, double monthlySalary, double rate, int nbBugs) {
         super(id, name, age, birthYear, monthlySalary, rate);
         this.nbBugs = nbBugs;
     }

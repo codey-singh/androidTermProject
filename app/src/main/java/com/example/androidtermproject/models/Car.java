@@ -2,7 +2,7 @@ package com.example.androidtermproject.models;
 
 public class Car extends Vehicle {
 
-    public Car(String make, String plate, String color, String category, String type) {
+    public Car(int id, String make, String plate, String color, String category, String type, int belongsTo) {
         super(id, make, plate, color, category, belongsTo);
         this.type = type;
     }

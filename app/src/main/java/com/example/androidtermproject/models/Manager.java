@@ -2,7 +2,7 @@ package com.example.androidtermproject.models;
 
 public class Manager extends Employee {
 
-    public Manager(String name, int age, int birthYear, double monthlySalary, double rate, int nbClients) {
+    public Manager(int id, String name, int age, int birthYear, double monthlySalary, double rate, int nbClients) {
         super(id, name, age, birthYear, monthlySalary, rate);
         this.nbClients = nbClients;
     }
@@ -20,10 +20,5 @@ public class Manager extends Employee {
     @Override
     public String getRole() {
         return "Manager";
-    }
-
-    @Override
-    public String getEmpId() {
-        return null;
     }
 }
