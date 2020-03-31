@@ -16,4 +16,9 @@ public class Manager extends Employee {
     public void setNbClients(int nbClients) {
         this.nbClients = nbClients;
     }
+
+    @Override
+    public String getRole() {
+        return "Manager";
+    }
 }

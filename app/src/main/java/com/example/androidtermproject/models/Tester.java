@@ -16,4 +16,9 @@ public class Tester extends Employee {
     public void setNbBugs(int nbBugs) {
         this.nbBugs = nbBugs;
     }
+
+    @Override
+    public String getRole() {
+        return "Tester";
+    }
 }

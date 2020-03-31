@@ -1,6 +1,6 @@
 package com.example.androidtermproject.models;
 
-class Vehicle {
+abstract class Vehicle implements IVehicle {
 
     Vehicle(String make, String plate, String color, String category) {
         this.make = make;
@@ -45,4 +45,7 @@ class Vehicle {
     public void setCategory(String category) {
         this.category = category;
     }
+
+    @Override
+    public abstract String getVehicleType();
 }

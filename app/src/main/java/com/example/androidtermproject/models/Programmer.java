@@ -1,9 +1,10 @@
 package com.example.androidtermproject.models;
 
-public class Programmer extends Vehicle {
+public class Programmer extends Employee {
 
-    public Programmer(String make, String plate, String color, String category, int nbProjects) {
-        super(make, plate, color, category);
+    public Programmer(String name, int age, int birthYear, double monthlySalary, double rate, int nbProjects) {
+        super(name, age, birthYear, monthlySalary, rate);
+
         this.nbProjects = nbProjects;
     }
 
@@ -15,5 +16,10 @@ public class Programmer extends Vehicle {
 
     public void setNbProjects(int nbProjects) {
         this.nbProjects = nbProjects;
+    }
+
+    @Override
+    public String getRole() {
+        return "Programmer";
     }
 }

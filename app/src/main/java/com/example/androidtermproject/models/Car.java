@@ -16,4 +16,9 @@ public class Car extends Vehicle {
     public void setType(String type) {
         this.type = type;
     }
+
+    @Override
+    public String getVehicleType() {
+        return "Car";
+    }
 }

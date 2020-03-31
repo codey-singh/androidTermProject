@@ -16,4 +16,9 @@ public class Motorcycle extends Vehicle {
     public void setHasSideCar(boolean hasSideCar) {
         this.hasSideCar = hasSideCar;
     }
+
+    @Override
+    public String getVehicleType() {
+        return "Motorcycle";
+    }
 }

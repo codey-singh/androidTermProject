@@ -1,6 +1,6 @@
 package com.example.androidtermproject.models;
 
-public class Employee {
+public abstract class Employee implements IEmployee {
 
     Employee(String name, int age, int birthYear, double monthlySalary, double rate) {
         this.name = name;
@@ -55,4 +55,8 @@ public class Employee {
     public void setRate(double rate) {
         this.rate = rate;
     }
+
+    @Override
+    public abstract String getRole();
+
 }
