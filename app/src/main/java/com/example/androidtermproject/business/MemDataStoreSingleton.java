@@ -1,5 +1,9 @@
 package com.example.androidtermproject.business;
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
 import com.example.androidtermproject.models.IEmployee;
 import com.example.androidtermproject.models.IVehicle;
 
@@ -29,20 +33,13 @@ public class MemDataStoreSingleton implements IDataService {
 
     @Override
     public boolean addEmployee(IEmployee employee) {
-        employees.add(employee);
-        return true;
+        return employees.add(employee);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public boolean removeEmployee(int id) {
-        boolean ret = false;
-        for (int i = 0; i < employees.size(); i++ ) {
-            if(employees.get(i).getEmpId() == id) {
-                employees.remove(i);
-                ret = true;
-            }
-        }
-        return ret;
+        return employees.removeIf(employee -> employee.getEmpId() == id);
     }
 
     @Override
@@ -52,19 +49,12 @@ public class MemDataStoreSingleton implements IDataService {
 
     @Override
     public boolean addVehicle(IVehicle vehicle) {
-        vehicles.add(vehicle);
-        return true;
+        return vehicles.add(vehicle);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public boolean removeVehicle(int id) {
-        boolean ret = false;
-        for (int i = 0; i < vehicles.size(); i++ ) {
-            if(vehicles.get(i).getVehicleId() == id) {
-                vehicles.remove(i);
-                ret = true;
-            }
-        }
-        return ret;
+        return employees.removeIf(employee -> employee.getEmpId() == id);
     }
 }
