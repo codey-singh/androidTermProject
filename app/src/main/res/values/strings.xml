@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">AndroidTermProject</string>
+    <string name="registration_form">Registration Form</string>
+    <string name="employee_first_name">Employee First Name</string>
+    <string name="employee_birth_year">Employee Birth Year</string>
     <string-array name="EmployeeType">
         <item>Choose a Type</item>
         <item>Manager</item>
