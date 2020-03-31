@@ -6,7 +6,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-public class DatabaseHelper extends SQLiteOpenHelper {
+import com.example.androidtermproject.models.IEmployee;
+import com.example.androidtermproject.models.IVehicle;
+
+import java.util.ArrayList;
+
+public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
 
     private static DatabaseHelper instance;
 
@@ -29,5 +34,35 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+    }
+
+    @Override
+    public ArrayList<IEmployee> getEmployees() {
+        return null;
+    }
+
+    @Override
+    public boolean addEmployee(IEmployee employee) {
+        return false;
+    }
+
+    @Override
+    public boolean removeEmployee(int id) {
+        return false;
+    }
+
+    @Override
+    public ArrayList<IVehicle> getVehicles() {
+        return null;
+    }
+
+    @Override
+    public boolean addVehicle(IVehicle vehicle) {
+        return false;
+    }
+
+    @Override
+    public boolean removeVehicle(int id) {
+        return false;
     }
 }

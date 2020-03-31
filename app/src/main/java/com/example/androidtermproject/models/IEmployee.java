@@ -1,5 +1,5 @@
 package com.example.androidtermproject.models;
 
-interface IEmployee {
+public interface IEmployee {
     String getRole();
 }

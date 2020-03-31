@@ -1,5 +1,5 @@
 package com.example.androidtermproject.models;
 
-interface IVehicle {
+public interface IVehicle {
   String getVehicleType();
 }
