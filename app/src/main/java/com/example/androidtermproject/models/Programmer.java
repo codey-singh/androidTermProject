@@ -3,7 +3,7 @@ package com.example.androidtermproject.models;
 public class Programmer extends Employee {
 
     public Programmer(String name, int age, int birthYear, double monthlySalary, double rate, int nbProjects) {
-        super(name, age, birthYear, monthlySalary, rate);
+        super(id, name, age, birthYear, monthlySalary, rate);
 
         this.nbProjects = nbProjects;
     }

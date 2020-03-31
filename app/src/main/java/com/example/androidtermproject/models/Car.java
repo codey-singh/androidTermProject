@@ -3,7 +3,7 @@ package com.example.androidtermproject.models;
 public class Car extends Vehicle {
 
     public Car(String make, String plate, String color, String category, String type) {
-        super(make, plate, color, category);
+        super(id, make, plate, color, category, belongsTo);
         this.type = type;
     }
 

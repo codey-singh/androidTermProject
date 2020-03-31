@@ -2,7 +2,8 @@ package com.example.androidtermproject.models;
 
 public abstract class Employee implements IEmployee {
 
-    Employee(String name, int age, int birthYear, double monthlySalary, double rate) {
+    Employee(int id, String name, int age, int birthYear, double monthlySalary, double rate) {
+        this.id = id;
         this.name = name;
         this.age = age;
         this.birthYear = birthYear;
@@ -10,11 +11,20 @@ public abstract class Employee implements IEmployee {
         this.rate = rate;
     }
 
+    private int id;
     private String name;
     private int age;
     private int birthYear;
     private double monthlySalary;
     private double rate;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -59,4 +69,8 @@ public abstract class Employee implements IEmployee {
     @Override
     public abstract String getRole();
 
+    @Override
+    public int getEmpId() {
+        return id;
+    };
 }

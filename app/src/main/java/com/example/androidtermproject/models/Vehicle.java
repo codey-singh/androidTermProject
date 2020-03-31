@@ -2,17 +2,29 @@ package com.example.androidtermproject.models;
 
 abstract class Vehicle implements IVehicle {
 
-    Vehicle(String make, String plate, String color, String category) {
+    Vehicle(int id, String make, String plate, String color, String category, int belongsTo) {
+        this.id = id;
         this.make = make;
         this.plate = plate;
         this.color = color;
         this.category = category;
+        this.belongsTo = belongsTo;
     }
 
+    private int id;
     private String make;
     private String plate;
     private String color;
     private String category;
+    private int belongsTo; // belongs to which employee
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getMake() {
         return make;
@@ -46,6 +58,20 @@ abstract class Vehicle implements IVehicle {
         this.category = category;
     }
 
+    public int getBelongsTo() {
+        return belongsTo;
+    }
+
+    public void setBelongsTo(int belongsTo) {
+        this.belongsTo = belongsTo;
+    }
+
     @Override
     public abstract String getVehicleType();
+
+    @Override
+    public int getVehicleId() {
+        return id;
+    }
+
 }

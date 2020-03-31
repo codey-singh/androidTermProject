@@ -3,7 +3,7 @@ package com.example.androidtermproject.models;
 public class Motorcycle extends Vehicle {
 
     public Motorcycle(String make, String plate, String color, String category, boolean hasSideCar) {
-        super(make, plate, color, category);
+        super(id, make, plate, color, category, belongsTo);
         this.hasSideCar = hasSideCar;
     }
 

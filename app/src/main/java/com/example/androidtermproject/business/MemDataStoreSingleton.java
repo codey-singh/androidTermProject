@@ -7,6 +7,9 @@ import java.util.ArrayList;
 
 public class MemDataStoreSingleton implements IDataService {
 
+    private ArrayList<IEmployee> employees = new ArrayList<>();
+    private ArrayList<IVehicle> vehicles = new ArrayList<>();
+
     private MemDataStoreSingleton() {
     }
 
@@ -21,31 +24,47 @@ public class MemDataStoreSingleton implements IDataService {
 
     @Override
     public ArrayList<IEmployee> getEmployees() {
-        return null;
+        return employees;
     }
 
     @Override
     public boolean addEmployee(IEmployee employee) {
-        return false;
+        employees.add(employee);
+        return true;
     }
 
     @Override
     public boolean removeEmployee(int id) {
-        return false;
+        boolean ret = false;
+        for (int i = 0; i < employees.size(); i++ ) {
+            if(employees.get(i).getEmpId() == id) {
+                employees.remove(i);
+                ret = true;
+            }
+        }
+        return ret;
     }
 
     @Override
     public ArrayList<IVehicle> getVehicles() {
-        return null;
+        return vehicles;
     }
 
     @Override
     public boolean addVehicle(IVehicle vehicle) {
-        return false;
+        vehicles.add(vehicle);
+        return true;
     }
 
     @Override
     public boolean removeVehicle(int id) {
-        return false;
+        boolean ret = false;
+        for (int i = 0; i < vehicles.size(); i++ ) {
+            if(vehicles.get(i).getVehicleId() == id) {
+                vehicles.remove(i);
+                ret = true;
+            }
+        }
+        return ret;
     }
 }
