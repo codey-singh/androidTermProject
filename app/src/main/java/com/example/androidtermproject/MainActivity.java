@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goToReg(View view) {
-        Intent intent = new Intent(this, EmpRegistrationActivity.class);
+        Intent intent = new Intent(this, registrationform2.class);
         startActivity(intent);
     }
 }

@@ -1,331 +1,335 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".registrationform2">
-
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/RegistrationForm"
+                android:textAlignment="center"
+                android:layout_marginTop="5dp"
+                android:textSize="25dp"
+                android:text="Registration Form"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/RegistrationForm"
-            android:textAlignment="center"
-            android:layout_marginTop="5dp"
-            android:textSize="25dp"
-            android:text="Registration Form"/>
-    </LinearLayout>
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_margin="10dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/EmpFName"
+                android:textSize="17dp"
+                android:text="Employee First Name"
+                android:layout_weight="1"
+                />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/FirstName"
+                android:hint="First Name"
+                android:layout_weight="1"/>
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/EmpFName"
-        android:textSize="17dp"
-        android:text="Employee First Name"
-        android:layout_weight="1"
-        />
-    <EditText
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/FirstName"
-        android:hint="First Name"
-        android:layout_weight="1"/>
+        </LinearLayout>
 
-</LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/EmpLName"
-            android:textSize="17dp"
-            android:text="Employee Last Name"
-            android:layout_weight="1"
-            />
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/LastName"
-            android:hint="Last Name"
-            android:layout_weight="1"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/EmpBirthYear"
-            android:textSize="17dp"
-            android:text="Employee Birth Year"
-            android:layout_weight="1"
-            />
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/birth_year"
-            android:hint="Birth Year"
-            android:layout_weight="1"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/EmpMonthlySalary"
-            android:textSize="17dp"
-            android:text="Monthly Salary"
-            android:layout_weight="1"
-            />
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/monthlySalary"
-            android:hint="Monthly Salary"
-            android:layout_weight="1"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/EmpOccupationRate"
-            android:textSize="17dp"
-            android:text="Occupation Rate"
-            android:layout_weight="1"
-            />
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/OccupationRate"
-            android:hint="Occupation rate"
-            android:layout_weight="1"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/EmpEmployeeID"
-            android:textSize="17dp"
-            android:text="Employee ID"
-            android:layout_weight="1"
-            />
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/EmployeeID"
-            android:hint="Employee ID"
-            android:layout_weight="1"/>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/EmpType"
-            android:textSize="17dp"
-            android:text="Employee Type"
-            android:layout_weight="1"
-            />
-        <Spinner
-            android:id="@+id/EmpTypeSpinner"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:entries="@array/EmployeeType"
-            android:scrollbarSize="10dp"
-            android:layout_weight="1"
-            />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/EmpManual_Data"
-            android:textSize="17dp"
-            android:text="Manual Data"
-            android:layout_weight="1"
-            />
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/Manual_Data"
-            android:hint="Manual Data"
-            android:layout_weight="1"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/EmpVehicle"
-            android:textSize="17dp"
-            android:text="Vehicle"
-            android:layout_weight="1"/>
-        <RadioGroup
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_weight="1">
+            android:layout_margin="10dp">
 
-            <RadioButton
+            <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/EmpCar"
-                android:text="Car"
+                android:id="@+id/EmpLName"
                 android:textSize="17dp"
-                android:layout_weight="1"/>
-            <RadioButton
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/EmpMotorBike"
+                android:text="Employee Last Name"
                 android:layout_weight="1"
+                />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/LastName"
+                android:hint="Last Name"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/EmpBirthYear"
                 android:textSize="17dp"
-                android:text="MotorBike"/>
+                android:text="Employee Birth Year"
+                android:layout_weight="1"
+                />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/birth_year"
+                android:hint="Birth Year"
+                android:layout_weight="1"/>
 
-        </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/EmpMonthlySalary"
+                android:textSize="17dp"
+                android:text="Monthly Salary"
+                android:layout_weight="1"
+                />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/monthlySalary"
+                android:hint="Monthly Salary"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/EmpOccupationRate"
+                android:textSize="17dp"
+                android:text="Occupation Rate"
+                android:layout_weight="1"
+                />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/OccupationRate"
+                android:hint="Occupation rate"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/EmpEmployeeID"
+                android:textSize="17dp"
+                android:text="Employee ID"
+                android:layout_weight="1"
+                />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/EmployeeID"
+                android:hint="Employee ID"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/EmpType"
+                android:textSize="17dp"
+                android:text="Employee Type"
+                android:layout_weight="1"
+                />
+            <Spinner
+                android:id="@+id/EmpTypeSpinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:entries="@array/EmployeeType"
+                android:scrollbarSize="10dp"
+                android:layout_weight="1"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/EmpManual_Data"
+                android:textSize="17dp"
+                android:text="Manual Data"
+                android:layout_weight="1"
+                />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/Manual_Data"
+                android:hint="Manual Data"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/EmpVehicle"
+                android:textSize="17dp"
+                android:text="Vehicle"
+                android:layout_weight="1"/>
+            <RadioGroup
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/EmpCar"
+                    android:text="Car"
+                    android:textSize="17dp"
+                    android:layout_weight="1"/>
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/EmpMotorBike"
+                    android:layout_weight="1"
+                    android:textSize="17dp"
+                    android:text="MotorBike"/>
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/EmpVModel"
+                android:textSize="17dp"
+                android:text="Vehicle Model"
+                android:layout_weight="1"
+                />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/VehicleModel"
+                android:hint="Vehicle Model"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/EmpPlateNumber"
+                android:textSize="17dp"
+                android:text="Plate Number"
+                android:layout_weight="1"
+                />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/PlateNumber"
+                android:hint="Plate Number"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/VColor"
+                android:textSize="17dp"
+                android:text="Vehicle Color"
+                android:layout_weight="1"
+                />
+            <Spinner
+                android:id="@+id/VColorSpinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:entries="@array/color"
+                android:scrollbarSize="10dp"
+                android:layout_weight="1"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/EmpRegister"
+                android:layout_weight="1"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/EmpVModel"
-            android:textSize="17dp"
-            android:text="Vehicle Model"
-            android:layout_weight="1"
-            />
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/VehicleModel"
-            android:hint="Vehicle Model"
-            android:layout_weight="1"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/EmpPlateNumber"
-            android:textSize="17dp"
-            android:text="Plate Number"
-            android:layout_weight="1"
-            />
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/PlateNumber"
-            android:hint="Plate Number"
-            android:layout_weight="1"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/VColor"
-            android:textSize="17dp"
-            android:text="Vehicle Color"
-            android:layout_weight="1"
-            />
-        <Spinner
-            android:id="@+id/VColorSpinner"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:entries="@array/color"
-            android:scrollbarSize="10dp"
-            android:layout_weight="1"
-            />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-       <Button
-           android:layout_width="0dp"
-           android:layout_height="wrap_content"
-           android:id="@+id/EmpRegister"
-           android:layout_weight="1"
-           android:textAlignment="center"/>
-
-    </LinearLayout>
-
-</LinearLayout>
+</ScrollView>
