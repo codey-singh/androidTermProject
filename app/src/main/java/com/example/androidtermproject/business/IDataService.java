@@ -5,7 +5,7 @@ import com.example.androidtermproject.models.IVehicle;
 
 import java.util.ArrayList;
 
-interface IDataService {
+public interface IDataService {
     ArrayList<IEmployee> getEmployees();
     boolean addEmployee(IEmployee employee);
     boolean removeEmployee(int id);
