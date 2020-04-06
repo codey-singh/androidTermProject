@@ -1,6 +1,7 @@
 package com.example.androidtermproject;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,43 +12,48 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.androidtermproject.business.MemDataStoreSingleton;
+import com.example.androidtermproject.models.Employee;
+import com.example.androidtermproject.models.IEmployee;
 
 import java.util.List;
-import java.util.jar.Attributes;
 
-public class ListAdapter extends ArrayAdapter {
-    private List<MemDataStoreSingleton> EmployeesData;
-    private final LayoutInflater layoutInflater;
-    private final int layoutResource;
+public class ListAdapter extends ArrayAdapter<IEmployee> {
+    private List<IEmployee> EmployeesData;
+    Context mContext;
+    private static class ViewHolder {
+        TextView eName;
+        TextView eId;
 
-
-    public ListAdapter(@NonNull Context context, int resource, List<MemDataStoreSingleton> EmployeesData) {
-        super(context, resource);
-        this.EmployeesData = EmployeesData;
-        this.layoutInflater = LayoutInflater.from(context);
-        this.layoutResource = resource;
     }
 
-    @Override
-    public int getCount() {
-        return EmployeesData.size();
+    public ListAdapter(@NonNull Context context, List<IEmployee> EmployeesData) {
+        super(context, R.layout.listview_layout, EmployeesData);
+        this.EmployeesData = EmployeesData;
+        this.mContext = context;
     }
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View v = convertView;
-        if (v == null)
-            v = layoutInflater.inflate(layoutResource, parent, false);
-        EditText EName=v.findViewById(R.id.Name);
-        EditText EId=v.findViewById(R.id.ID);
-        //String Name=EmployeesData.get().getEmployees();
-        //String ID =
-        EName.setText(Name);
-        EId.setText(ID);
-
-
-        return v;
+        Employee o = (Employee) getItem(position);
+        ViewHolder viewHolder;
+        final View result;
+        if (convertView == null) {
+            viewHolder = new ViewHolder();
+            LayoutInflater inflater = LayoutInflater.from(getContext());
+            convertView = inflater.inflate(R.layout.listview_layout, parent, false);
+            viewHolder.eId = (TextView) convertView.findViewById(R.id.ID);
+            viewHolder.eName = (TextView) convertView.findViewById(R.id.Name);
+            result=convertView;
+            convertView.setTag(viewHolder);
+        } else {
+            viewHolder = (ViewHolder) convertView.getTag();
+            result=convertView;
+        }
+        Log.i("Adapter", "getView: "+ o.toString());
+        viewHolder.eName.setText(o.getName());
+        viewHolder.eId.setText("" + o.getId());
+        // Return the completed view to render on scree
+        return convertView;
     }
 }
