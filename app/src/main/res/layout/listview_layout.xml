@@ -8,38 +8,48 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:weightSum="3">
-         <TextView
+        <TextView
+            android:id="@+id/ID"
+            android:text="ID :"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="NAME :"
-             android:gravity="center"
+            android:gravity="left"
+            android:paddingLeft="10dp"
             />
         <TextView
-            android:id="@+id/Name"
+             android:id="@+id/Name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:gravity="left"
+            android:text="NAME :"
+             android:gravity="left"
+            android:paddingLeft="10dp"
             />
+
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:weightSum="3">
         <TextView
+            android:id="@+id/Age"
+            android:text="AGE :"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="ID   :"
-            android:gravity="center"
+            android:gravity="left"
+            android:paddingLeft="10dp"
             />
         <TextView
-            android:id="@+id/ID"
+            android:id="@+id/Post"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
+            android:text="POST :"
             android:gravity="left"
+            android:paddingLeft="10dp"
             />
     </LinearLayout>
 </LinearLayout>

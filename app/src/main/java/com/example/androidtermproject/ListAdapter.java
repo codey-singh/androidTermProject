@@ -23,6 +23,8 @@ public class ListAdapter extends ArrayAdapter<IEmployee> {
     private static class ViewHolder {
         TextView eName;
         TextView eId;
+        TextView eAge;
+        TextView ePost;
 
     }
 
@@ -44,6 +46,8 @@ public class ListAdapter extends ArrayAdapter<IEmployee> {
             convertView = inflater.inflate(R.layout.listview_layout, parent, false);
             viewHolder.eId = (TextView) convertView.findViewById(R.id.ID);
             viewHolder.eName = (TextView) convertView.findViewById(R.id.Name);
+            viewHolder.eAge=(TextView)convertView.findViewById(R.id.Age);
+            viewHolder.ePost=(TextView)convertView.findViewById(R.id.Post);
             result=convertView;
             convertView.setTag(viewHolder);
         } else {
@@ -51,8 +55,10 @@ public class ListAdapter extends ArrayAdapter<IEmployee> {
             result=convertView;
         }
         Log.i("Adapter", "getView: "+ o.toString());
-        viewHolder.eName.setText(o.getName());
-        viewHolder.eId.setText("" + o.getId());
+        viewHolder.eName.setText("NAME : "+o.getName());
+        viewHolder.eId.setText("ID  : " + o.getId());
+        viewHolder.eAge.setText("AGE : "+o.getAge());
+        viewHolder.ePost.setText("POST : "+o.getRole());
         // Return the completed view to render on scree
         return convertView;
     }
