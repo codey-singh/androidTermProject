@@ -31,7 +31,11 @@ public class RegistrationForm extends AppCompatActivity {
         EmpTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if(position == 1) {
+                if(position == 0) {
+                    dynamicLL.setVisibility(View.GONE);
+                    return;
+                }
+                else if(position == 1) {
                     EmpManual_Data.setText("Number of Clients");
                     Manual_Data.setHint("Number of Clients");
                 }
@@ -39,13 +43,12 @@ public class RegistrationForm extends AppCompatActivity {
                     EmpManual_Data.setText("Number of Bugs");
                     Manual_Data.setHint("Number of Bugs");
                 }
-                else if (position == 3){
+                else {
                     EmpManual_Data.setText("Number of Projects");
                     Manual_Data.setHint("Number of Projects");
                 }
                 dynamicLL.setVisibility(View.VISIBLE);
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 dynamicLL.setVisibility(View.GONE);
