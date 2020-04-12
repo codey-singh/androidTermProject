@@ -26,5 +26,11 @@ public class RegistrationForm extends AppCompatActivity {
             toast.show();
             return;
         }
+        final String lname = e_lname.getText().toString();
+        if (lname.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Please enter Lastname", Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+        }
     }
 }
