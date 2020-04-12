@@ -2,8 +2,10 @@ package com.example.androidtermproject.models;
 
 public class Programmer extends Employee {
 
-    public Programmer(int id, String name, int age, int birthYear, double monthlySalary, double rate, int nbProjects) {
-        super(id, name, age, birthYear, monthlySalary, rate);
+    private final int GAIN_FACTOR_PROJECTS = 200;
+
+    public Programmer(int id, String name, int age, int birthYear, double monthlySalary, double rate, int nbProjects, double occupationRate) {
+        super(id, name, age, birthYear, monthlySalary, rate, occupationRate);
 
         this.nbProjects = nbProjects;
     }
@@ -22,4 +24,10 @@ public class Programmer extends Employee {
     public String getRole() {
         return "Programmer";
     }
+
+    @Override
+    public double annualIncome() {
+        return (getMonthlySalary() * 12) + (GAIN_FACTOR_PROJECTS * nbProjects);
+    }
+
 }
