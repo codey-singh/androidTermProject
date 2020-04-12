@@ -72,6 +72,7 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
                 values.put("monthlySalary", ((Programmer) employee).getMonthlySalary());
                 values.put("rate", ((Programmer) employee).getRate());
                 values.put("nbProjects", ((Programmer) employee).getNbProjects());
+                values.put("occupationRate", ((Programmer) employee).getOccupationRate());
                 break;
             case "Tester":
                 values.put("id", employee.getEmpId());
@@ -81,6 +82,7 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
                 values.put("monthlySalary", ((Tester) employee).getMonthlySalary());
                 values.put("rate", ((Tester) employee).getRate());
                 values.put("nbBugs", ((Tester) employee).getNbBugs());
+                values.put("occupationRate", ((Tester) employee).getOccupationRate());
                 break;
             case "Manager":
                 values.put("id", employee.getEmpId());
@@ -90,6 +92,7 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
                 values.put("monthlySalary", ((Manager) employee).getMonthlySalary());
                 values.put("rate", ((Manager) employee).getRate());
                 values.put("nbClients", ((Manager) employee).getNbClients());
+                values.put("occupationRate", ((Manager) employee).getOccupationRate());
                 break;
         }
         return db.insert("Employees", null, values) != -1;
@@ -149,7 +152,8 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
                         cursor.getInt(cursor.getColumnIndex("birthYear")),
                         cursor.getDouble(cursor.getColumnIndex("monthlySalary")),
                         cursor.getDouble(cursor.getColumnIndex("rate")),
-                        cursor.getInt(cursor.getColumnIndex("nbProjects"))
+                        cursor.getInt(cursor.getColumnIndex("nbProjects")),
+                        cursor.getDouble(cursor.getColumnIndex("occupationRate"))
                         );
             case "Tester":
                 return new Tester(
@@ -159,7 +163,8 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
                         cursor.getInt(cursor.getColumnIndex("birthYear")),
                         cursor.getDouble(cursor.getColumnIndex("monthlySalary")),
                         cursor.getDouble(cursor.getColumnIndex("rate")),
-                        cursor.getInt(cursor.getColumnIndex("nbBugs"))
+                        cursor.getInt(cursor.getColumnIndex("nbBugs")),
+                        cursor.getDouble(cursor.getColumnIndex("occupationRate"))
                 );
             case "Manager":
                 return new Manager(
@@ -169,7 +174,8 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
                         cursor.getInt(cursor.getColumnIndex("birthYear")),
                         cursor.getDouble(cursor.getColumnIndex("monthlySalary")),
                         cursor.getDouble(cursor.getColumnIndex("rate")),
-                        cursor.getInt(cursor.getColumnIndex("nbClients"))
+                        cursor.getInt(cursor.getColumnIndex("nbClients")),
+                        cursor.getDouble(cursor.getColumnIndex("occupationRate"))
                 );
             default:
                 return null;

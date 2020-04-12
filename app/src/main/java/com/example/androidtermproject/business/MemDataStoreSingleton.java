@@ -18,9 +18,9 @@ public class MemDataStoreSingleton implements IDataService {
     private ArrayList<IVehicle> vehicles = new ArrayList<>();
 
     private MemDataStoreSingleton() {
-        Tester tester = new Tester(100,"John Doe",25,1995,3000,100,1000);
-        Programmer programmer = new Programmer(200,"Denny Thomas",30,1990,4500,100,2);
-        Manager manager = new Manager(300,"Silvi Jane",40,1980,7500,100,4);
+        Tester tester = new Tester(100,"John Doe",25,1995,3000,100,1000, 0.2);
+        Programmer programmer = new Programmer(200,"Denny Thomas",30,1990,4500,100,2, 0.2);
+        Manager manager = new Manager(300,"Silvi Jane",40,1980,7500,100,4, 0.2);
         employees.add(tester);
         employees.add(manager);
         employees.add(programmer);
