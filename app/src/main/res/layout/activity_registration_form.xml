@@ -44,7 +44,7 @@
                 android:id="@+id/FirstName"
                 android:hint="@string/first_name"
                 android:layout_weight="1"
-                android:inputType="text"/>
+                android:inputType="textPersonName" />
 
         </LinearLayout>
 
@@ -332,6 +332,7 @@
                 android:layout_weight="1"
                 android:text="Register"
                 android:textSize="17sp"
+                android:onClick="regfunc"
                 android:textAlignment="center"/>
         </LinearLayout>
 

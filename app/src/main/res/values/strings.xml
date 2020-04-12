@@ -19,6 +19,7 @@
     <string name="vehicle_model">Vehicle Model</string>
     <string name="employee_last_name">Employee Last Name</string>
     <string name="last_name">Last Name</string>
+    <string name="invalid_name">Enter Correct Name</string>
 
 
     <string-array name="EmployeeType">
