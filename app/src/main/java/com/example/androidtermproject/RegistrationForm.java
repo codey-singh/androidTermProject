@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class RegistrationForm extends AppCompatActivity {
     //Variable declaration
-    EditText e_fname, e_lname, e_birthyear,e_monsal,e_occupationalRate;
+    EditText e_fname, e_lname, e_birthyear,e_monsal,e_occupationalRate,e_empID;
     Spinner EmpTypeSpinner;
     LinearLayout dynamicLL;
     TextView EmpManual_Data;
@@ -28,6 +28,7 @@ public class RegistrationForm extends AppCompatActivity {
         e_birthyear = findViewById(R.id.birth_year);
         e_monsal = findViewById(R.id.monthlySalary);
         e_occupationalRate =findViewById(R.id.OccupationRate);
+        e_empID =findViewById(R.id.EmployeeID);
         dynamicLL = findViewById(R.id.dynamicLL);
         EmpManual_Data = findViewById(R.id.EmpManual_Data);
         Manual_Data = findViewById(R.id.Manual_Data);
@@ -64,6 +65,7 @@ public class RegistrationForm extends AppCompatActivity {
         final String birthy = e_birthyear.getText().toString();
         final String monSal = e_monsal.getText().toString();
         final String occRate = e_occupationalRate.getText().toString();
+        final String empid = e_empID.getText().toString();
         final int by = Integer.parseInt(birthy);
         //final int or = Integer.parseInt(occRate);
         if (fname.equals("")) {
@@ -96,7 +98,11 @@ public class RegistrationForm extends AppCompatActivity {
             Toast toast = Toast.makeText(getApplicationContext(), "Please enter occupational rate less than 101%", Toast.LENGTH_SHORT);
             toast.show();
             return;}*/
-
+        else if (empid.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Please enter employee ID", Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+        }
 
     }
     }
