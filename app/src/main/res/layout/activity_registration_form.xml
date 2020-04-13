@@ -115,7 +115,7 @@
                 android:id="@+id/monthlySalary"
                 android:hint="@string/monthly_salary"
                 android:layout_weight="1"
-                android:inputType="number"/>
+                android:inputType="text"/>
 
         </LinearLayout>
 
@@ -139,7 +139,7 @@
                 android:id="@+id/OccupationRate"
                 android:hint="Occupation rate"
                 android:layout_weight="1"
-                android:inputType="number"/>
+                android:inputType="text"/>
 
         </LinearLayout>
 
