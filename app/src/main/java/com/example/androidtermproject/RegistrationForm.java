@@ -13,17 +13,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class RegistrationForm extends AppCompatActivity {
     //Variable declaration
-    EditText e_fname, e_lname;
+    EditText e_fname, e_lname, e_birthyear;
     Spinner EmpTypeSpinner;
     LinearLayout dynamicLL;
     TextView EmpManual_Data;
     EditText Manual_Data;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_form);
         e_fname = findViewById(R.id.FirstName);
         e_lname = findViewById(R.id.LastName);
+        e_birthyear = findViewById(R.id.birth_year);
         dynamicLL = findViewById(R.id.dynamicLL);
         EmpManual_Data = findViewById(R.id.EmpManual_Data);
         Manual_Data = findViewById(R.id.Manual_Data);
@@ -31,24 +33,22 @@ public class RegistrationForm extends AppCompatActivity {
         EmpTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if(position == 0) {
+                if (position == 0) {
                     dynamicLL.setVisibility(View.GONE);
                     return;
-                }
-                else if(position == 1) {
+                } else if (position == 1) {
                     EmpManual_Data.setText("Number of Clients");
                     Manual_Data.setHint("Number of Clients");
-                }
-                else if (position == 2){
+                } else if (position == 2) {
                     EmpManual_Data.setText("Number of Bugs");
                     Manual_Data.setHint("Number of Bugs");
-                }
-                else {
+                } else {
                     EmpManual_Data.setText("Number of Projects");
                     Manual_Data.setHint("Number of Projects");
                 }
                 dynamicLL.setVisibility(View.VISIBLE);
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 dynamicLL.setVisibility(View.GONE);
@@ -58,18 +58,26 @@ public class RegistrationForm extends AppCompatActivity {
 
     public void regfunc(View view) {
         final String fname = e_fname.getText().toString();
+        final String lname = e_lname.getText().toString();
+        final String birthy = e_birthyear.getText().toString();
+        final int by = Integer.parseInt(birthy);
         if (fname.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Please enter First name", Toast.LENGTH_SHORT);
             toast.show();
             return;
-        }
-        final String lname = e_lname.getText().toString();
-        if (lname.equals("")) {
+        } else if (lname.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Please enter Lastname", Toast.LENGTH_SHORT);
             toast.show();
             return;
+        } else if (birthy.length() != 4) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Enter year with 4 digits", Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+        } else if((by<=1900)||(by>2020)){
+            Toast toast = Toast.makeText(getApplicationContext(), "Birthyear should be after 1900 and before 2020", Toast.LENGTH_SHORT);
+            toast.show();
+            return;
         }
-
-
     }
+
 }
