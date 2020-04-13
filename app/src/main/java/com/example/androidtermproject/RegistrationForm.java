@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class RegistrationForm extends AppCompatActivity {
     //Variable declaration
-    EditText e_fname, e_lname, e_birthyear;
+    EditText e_fname, e_lname, e_birthyear,e_monsal;
     Spinner EmpTypeSpinner;
     LinearLayout dynamicLL;
     TextView EmpManual_Data;
@@ -26,6 +26,7 @@ public class RegistrationForm extends AppCompatActivity {
         e_fname = findViewById(R.id.FirstName);
         e_lname = findViewById(R.id.LastName);
         e_birthyear = findViewById(R.id.birth_year);
+        e_monsal = findViewById(R.id.monthlySalary);
         dynamicLL = findViewById(R.id.dynamicLL);
         EmpManual_Data = findViewById(R.id.EmpManual_Data);
         Manual_Data = findViewById(R.id.Manual_Data);
@@ -60,6 +61,7 @@ public class RegistrationForm extends AppCompatActivity {
         final String fname = e_fname.getText().toString();
         final String lname = e_lname.getText().toString();
         final String birthy = e_birthyear.getText().toString();
+        final String monSal = e_monsal.getText().toString();
         final int by = Integer.parseInt(birthy);
         if (fname.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Please enter First name", Toast.LENGTH_SHORT);
@@ -77,7 +79,12 @@ public class RegistrationForm extends AppCompatActivity {
             Toast toast = Toast.makeText(getApplicationContext(), "Birthyear should be after 1900 and before 2020", Toast.LENGTH_SHORT);
             toast.show();
             return;
+        }else if (monSal.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Please enter valid salary", Toast.LENGTH_SHORT);
+            toast.show();
+            return;
         }
+
+    }
     }
 
-}
