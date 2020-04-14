@@ -100,12 +100,20 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
 
     @Override
     public boolean removeEmployee(int id) {
-        return false;
+        SQLiteDatabase db = getWritableDatabase();
+        return db.delete("Employees", "id = ?", new String[] { ""+id }) > 0;
     }
 
     @Override
     public IEmployee getEmployee(int id) {
-        return null;
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM Employees", new String[]{});
+        IEmployee employee = null;
+        while(!cursor.isAfterLast()){
+            employee = employeeMapper(cursor);
+            cursor.moveToNext();
+        }
+        return employee;
     }
 
     @Override
@@ -125,7 +133,8 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
                 values.put("color", ((Car) vehicle).getColor());
                 values.put("category", ((Car) vehicle).getCategory());
                 values.put("type", ((Car) vehicle).getType());
-                values.put("belongsTo", ((Car) vehicle).getBelongsTo());
+                values.put("belongsTo", ((Car) vehicle).getBelongsTo()); //hasSideCar
+
                 break;
             case "Motorcycle":
                 values.put("id", vehicle.getVehicleId());//int id, String make, String plate, String color, String category, String type, int belongsTo
@@ -135,6 +144,7 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
                 values.put("category", ((Motorcycle) vehicle).getCategory());
                 values.put("type", ((Motorcycle) vehicle).isHasSideCar());
                 values.put("belongsTo", ((Motorcycle) vehicle).getBelongsTo());
+                values.put("hasSideCar", ((Motorcycle) vehicle).isHasSideCar()); //hasSideCar
                 break;
         }
 
@@ -143,12 +153,47 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
 
     @Override
     public boolean removeVehicle(int id) {
-        return false;
+        SQLiteDatabase db = getWritableDatabase();
+        return db.delete("Vehicles", "id = ?", new String[] { ""+id }) > 0;
     }
 
     @Override
     public IVehicle getVehicleForEmployee(int eId) {
-        return null;
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM Employees", new String[]{});
+        IVehicle vehicle = null;
+        while(!cursor.isAfterLast()){
+            vehicle = vehicleMapper(cursor);
+            cursor.moveToNext();
+        }
+        return vehicle;
+    }
+
+    private IVehicle vehicleMapper(Cursor cursor) {
+        switch(cursor.getString(cursor.getColumnIndex("type"))) {
+            case "Car":
+                return new Car(
+                        cursor.getInt(cursor.getColumnIndex("id")),
+                        cursor.getString(cursor.getColumnIndex("make")),
+                        cursor.getString(cursor.getColumnIndex("plate")),
+                        cursor.getString(cursor.getColumnIndex("color")),
+                        cursor.getString(cursor.getColumnIndex("category")),
+                        cursor.getString(cursor.getColumnIndex("type")),
+                        cursor.getInt(cursor.getColumnIndex("belongsTo"))
+                );
+            case "Motorcycle":
+                return new Motorcycle(
+                        cursor.getInt(cursor.getColumnIndex("id")),
+                        cursor.getString(cursor.getColumnIndex("make")),
+                        cursor.getString(cursor.getColumnIndex("plate")),
+                        cursor.getString(cursor.getColumnIndex("color")),
+                        cursor.getString(cursor.getColumnIndex("category")),
+                        cursor.getShort(cursor.getColumnIndex("type")) == 1,
+                        cursor.getInt(cursor.getColumnIndex("belongsTo"))
+                );
+            default:
+                return null;
+        }
     }
 
     private IEmployee employeeMapper(Cursor cursor) {
