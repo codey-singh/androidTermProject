@@ -104,6 +104,11 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
     }
 
     @Override
+    public IEmployee getEmployee(int id) {
+        return null;
+    }
+
+    @Override
     public ArrayList<IVehicle> getVehicles() {
         return null;
     }
@@ -141,6 +146,11 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
         return false;
     }
 
+    @Override
+    public IVehicle getVehicleForEmployee(int eId) {
+        return null;
+    }
+
     private IEmployee employeeMapper(Cursor cursor) {
         switch (cursor.getString(cursor.getColumnIndex("role"))){
             case "Programmer" :
@@ -150,7 +160,6 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
                         cursor.getInt(cursor.getColumnIndex("age")),
                         cursor.getInt(cursor.getColumnIndex("birthYear")),
                         cursor.getDouble(cursor.getColumnIndex("monthlySalary")),
-                        cursor.getDouble(cursor.getColumnIndex("rate")),
                         cursor.getInt(cursor.getColumnIndex("nbProjects")),
                         cursor.getDouble(cursor.getColumnIndex("occupationRate"))
                         );
@@ -161,7 +170,6 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
                         cursor.getInt(cursor.getColumnIndex("age")),
                         cursor.getInt(cursor.getColumnIndex("birthYear")),
                         cursor.getDouble(cursor.getColumnIndex("monthlySalary")),
-                        cursor.getDouble(cursor.getColumnIndex("rate")),
                         cursor.getInt(cursor.getColumnIndex("nbBugs")),
                         cursor.getDouble(cursor.getColumnIndex("occupationRate"))
                 );
@@ -172,7 +180,6 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
                         cursor.getInt(cursor.getColumnIndex("age")),
                         cursor.getInt(cursor.getColumnIndex("birthYear")),
                         cursor.getDouble(cursor.getColumnIndex("monthlySalary")),
-                        cursor.getDouble(cursor.getColumnIndex("rate")),
                         cursor.getInt(cursor.getColumnIndex("nbClients")),
                         cursor.getDouble(cursor.getColumnIndex("occupationRate"))
                 );

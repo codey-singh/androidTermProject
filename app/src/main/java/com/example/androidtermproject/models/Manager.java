@@ -5,8 +5,8 @@ public class Manager extends Employee {
     private final int GAIN_FACTOR_CLIENT = 500;
     private final int GAIN_FACTOR_TRAVEL = 100;
 
-    public Manager(int id, String name, int age, int birthYear, double monthlySalary, double rate, int nbClients, double occupationRate) {
-        super(id, name, age, birthYear, monthlySalary, rate, occupationRate);
+    public Manager(int id, String name, int age, int birthYear, double monthlySalary, int nbClients, double occupationRate) {
+        super(id, name, age, birthYear, monthlySalary, occupationRate);
         this.nbClients = nbClients;
     }
 

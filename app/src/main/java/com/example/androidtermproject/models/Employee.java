@@ -6,13 +6,12 @@ import java.util.Calendar;
 
 public abstract class Employee implements IEmployee {
 
-    Employee(int id, String name, int age, int birthYear, double monthlySalary, double rate, double occupationRate) {
+    Employee(int id, String name, int age, int birthYear, double monthlySalary, double occupationRate) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.birthYear = birthYear;
         this.monthlySalary = monthlySalary;
-        this.rate = rate;
         this.setOccupationRate(occupationRate);
     }
 

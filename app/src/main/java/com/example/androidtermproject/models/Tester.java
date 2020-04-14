@@ -4,8 +4,8 @@ public class Tester extends Employee {
 
     private final int GAIN_FACTOR_ERROR = 10;
 
-    public Tester(int id, String name, int age, int birthYear, double monthlySalary, double rate, int nbBugs, double occupationRate) {
-        super(id, name, age, birthYear, monthlySalary, rate, occupationRate);
+    public Tester(int id, String name, int age, int birthYear, double monthlySalary, int nbBugs, double occupationRate) {
+        super(id, name, age, birthYear, monthlySalary, occupationRate);
         this.nbBugs = nbBugs;
     }
 

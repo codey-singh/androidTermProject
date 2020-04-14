@@ -23,10 +23,10 @@ public class MemDataStoreSingleton implements IDataService {
     private MemDataStoreSingleton() {
         Car car1=new Car(1,"Honda","A1234","Red","Sedan","4-Door",100);
         Car car2=new Car(2,"Toyota","B1234","Black","Sedan","4-Door",200);
-        Motorcycle bike1=new Motorcycle(3,"Suzuki","C007","Blue","Sportsbike",false,300);
-        Tester tester = new Tester(100,"John Doe",25,1995,3000,100,1000, 0.2);
+        Motorcycle bike1=new Motorcycle(3,"Suzuki","C007","Blue","Sports bike",false,300);
+        Tester tester = new Tester(100,"John Doe",25,1995,3000,100, 0.2);
         Programmer programmer = new Programmer(200,"Denny Thomas",30,1990,4500,100,2, 0.2);
-        Manager manager = new Manager(300,"Silvi Jane",40,1980,7500,100,4, 0.2);
+        Manager manager = new Manager(300,"Silvi Jane",40,1980,7500,4, 0.2);
         vehicles.add(car1);
         vehicles.add(car2);
         vehicles.add(bike1);
@@ -60,6 +60,12 @@ public class MemDataStoreSingleton implements IDataService {
         return employees.removeIf(employee -> employee.getEmpId() == id);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    @Override
+    public IEmployee getEmployee(int id) {
+        return (IEmployee) employees.stream().filter(employee -> employee.getEmpId() == id);
+    }
+
     @Override
     public ArrayList<IVehicle> getVehicles() {
         return vehicles;
@@ -76,12 +82,9 @@ public class MemDataStoreSingleton implements IDataService {
         return employees.removeIf(employee -> employee.getEmpId() == id);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
-    public Vehicle getVehicleForEmployee(int eId) {
-        for (IVehicle vehicle: vehicles) {
-            if (vehicle.getBelongsTo() == eId) {
-                return getEmployees()
-            }
-        }
+    public IVehicle getVehicleForEmployee(int eId) {
+        return (IVehicle) vehicles.stream().filter(iVehicle -> iVehicle.getBelongsTo() == eId);
     }
 }
