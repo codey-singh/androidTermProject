@@ -250,9 +250,39 @@
                     android:layout_weight="1"
                     android:textSize="17sp"
                     android:text="@string/motorbike"/>
-
             </RadioGroup>
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            android:visibility="gone"
+            android:id="@+id/dynamicSwitch">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/EmpSideCarDisplay"
+                android:textSize="17sp"
+                android:text="Has Side Car"
+                android:layout_weight="1"
+                android:inputType="text"/>
+            <Switch
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="150dp"
+                android:layout_weight="1"
+
+                android:checked="false"
+                android:textOff="No"
+                android:textOn="Yes"
+                android:textSize="17sp"
+                android:textColor="#f00"
+                />
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"

@@ -130,7 +130,7 @@ public class RegistrationForm extends AppCompatActivity {
         }
         else {
             Toast toast = Toast.makeText(getApplicationContext(), "Valid input", Toast.LENGTH_SHORT);
-            toast.show();
+             toast.show();
 
         }
 
