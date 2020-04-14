@@ -15,10 +15,12 @@ import androidx.annotation.Nullable;
 import com.example.androidtermproject.models.Employee;
 import com.example.androidtermproject.models.IEmployee;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ListAdapter extends ArrayAdapter<IEmployee> {
     private List<IEmployee> EmployeesData;
+    private ArrayList<IEmployee> EmployeeOrigin;
     Context mContext;
     private static class ViewHolder {
         TextView eName;
@@ -31,6 +33,8 @@ public class ListAdapter extends ArrayAdapter<IEmployee> {
         super(context, R.layout.listview_layout, EmployeesData);
         this.EmployeesData = EmployeesData;
         this.mContext = context;
+        this.EmployeeOrigin = new ArrayList<IEmployee>();
+        this.EmployeeOrigin.addAll(EmployeesData);
     }
 
     @NonNull
@@ -60,5 +64,21 @@ public class ListAdapter extends ArrayAdapter<IEmployee> {
         viewHolder.ePost.setText("POST : "+o.getRole());
         // Return the completed view to render on scree
         return convertView;
+    }
+    public void filter(String charText) {
+        charText = charText.toLowerCase();
+        EmployeesData.clear();
+        if (charText.length() == 0) {
+            EmployeesData.addAll(EmployeeOrigin);}
+        else {
+            for (IEmployee em : EmployeeOrigin)
+            {
+                Employee e=(Employee)em;
+                if(e.getName().toLowerCase().contains(charText))
+            {
+                    EmployeesData.add(em); }
+            }
+        }
+        notifyDataSetChanged();
     }
 }
