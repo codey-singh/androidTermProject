@@ -2,6 +2,7 @@ package com.example.androidtermproject.business;
 
 import com.example.androidtermproject.models.IEmployee;
 import com.example.androidtermproject.models.IVehicle;
+import com.example.androidtermproject.models.Vehicle;
 
 import java.util.ArrayList;
 
@@ -13,4 +14,5 @@ public interface IDataService {
     ArrayList<IVehicle> getVehicles();
     boolean addVehicle(IVehicle vehicle);
     boolean removeVehicle(int id);
+    Vehicle getVehicleForEmployee(int eId);
 }

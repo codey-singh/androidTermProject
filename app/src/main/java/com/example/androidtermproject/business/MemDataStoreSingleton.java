@@ -4,11 +4,14 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
+import com.example.androidtermproject.models.Car;
 import com.example.androidtermproject.models.IEmployee;
 import com.example.androidtermproject.models.IVehicle;
 import com.example.androidtermproject.models.Manager;
+import com.example.androidtermproject.models.Motorcycle;
 import com.example.androidtermproject.models.Programmer;
 import com.example.androidtermproject.models.Tester;
+import com.example.androidtermproject.models.Vehicle;
 
 import java.util.ArrayList;
 
@@ -18,9 +21,15 @@ public class MemDataStoreSingleton implements IDataService {
     private ArrayList<IVehicle> vehicles = new ArrayList<>();
 
     private MemDataStoreSingleton() {
+        Car car1=new Car(1,"Honda","A1234","Red","Sedan","4-Door",100);
+        Car car2=new Car(2,"Toyota","B1234","Black","Sedan","4-Door",200);
+        Motorcycle bike1=new Motorcycle(3,"Suzuki","C007","Blue","Sportsbike",false,300);
         Tester tester = new Tester(100,"John Doe",25,1995,3000,100,1000, 0.2);
         Programmer programmer = new Programmer(200,"Denny Thomas",30,1990,4500,100,2, 0.2);
         Manager manager = new Manager(300,"Silvi Jane",40,1980,7500,100,4, 0.2);
+        vehicles.add(car1);
+        vehicles.add(car2);
+        vehicles.add(bike1);
         employees.add(tester);
         employees.add(manager);
         employees.add(programmer);
@@ -65,5 +74,14 @@ public class MemDataStoreSingleton implements IDataService {
     @Override
     public boolean removeVehicle(int id) {
         return employees.removeIf(employee -> employee.getEmpId() == id);
+    }
+
+    @Override
+    public Vehicle getVehicleForEmployee(int eId) {
+        for (IVehicle vehicle: vehicles) {
+            if (vehicle.getBelongsTo() == eId) {
+                return getEmployees()
+            }
+        }
     }
 }

@@ -1,6 +1,8 @@
 package com.example.androidtermproject.models;
 
-public interface IEmployee {
+import java.io.Serializable;
+
+public interface IEmployee extends Serializable {
     String getRole();
     int getEmpId();
     double annualIncome();

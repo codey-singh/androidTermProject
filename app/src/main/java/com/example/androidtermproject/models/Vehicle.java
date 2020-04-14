@@ -1,6 +1,6 @@
 package com.example.androidtermproject.models;
 
-abstract class Vehicle implements IVehicle {
+abstract public class Vehicle implements IVehicle {
 
     Vehicle(int id, String make, String plate, String color, String category, int belongsTo) {
         this.id = id;
