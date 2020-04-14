@@ -82,13 +82,22 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/roleDisplay"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Employee has a car"
+            android:layout_weight="1"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="Role"
+            android:textSize="17sp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text=""
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:textSize="17sp"
-            android:id="@+id/carDetail"
+            android:id="@+id/roleDetails"
             android:layout_weight="1"/>
     </LinearLayout>
 
