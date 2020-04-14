@@ -52,20 +52,13 @@ public class RegistrationForm extends AppCompatActivity {
         empBike = findViewById(R.id.EmpMotorBike);
         carTypeLL = findViewById(R.id.dynamicCarTypeLayout);
 
-        carMotorbike.setOnClickListener(new AdapterView.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(empCar.isSelected()){
-                    carTypeLL.setVisibility(View.VISIBLE);
-
-                }else if(empBike.isSelected()){
-                    dynamicSwitch.setVisibility(View.VISIBLE);
-
-                }else {
-                    carTypeLL.setVisibility(View.GONE);
-                    dynamicSwitch.setVisibility(View.GONE);
-                }
-
+        carMotorbike.setOnCheckedChangeListener((group, checkedId) -> {
+            if(checkedId == R.id.EmpCar) {
+                carTypeLL.setVisibility(View.VISIBLE);
+                dynamicSwitch.setVisibility(View.GONE);
+            } else if (checkedId == R.id.EmpMotorBike) {
+                carTypeLL.setVisibility(View.GONE);
+                dynamicSwitch.setVisibility(View.VISIBLE);
             }
         });
 
@@ -163,7 +156,7 @@ public class RegistrationForm extends AppCompatActivity {
                     break;
             }
         } else if (carType.equals("")) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Please enter Car Type number", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(getApplicationContext(), "Please enter Car Type", Toast.LENGTH_SHORT);
             toast.show();
         } else {
             Toast toast = Toast.makeText(getApplicationContext(), "Valid input", Toast.LENGTH_SHORT);
