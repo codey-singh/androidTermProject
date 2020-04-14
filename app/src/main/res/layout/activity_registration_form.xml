@@ -83,7 +83,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/EmpBirthYear"
                 android:textSize="17sp"
-                android:text="Employee Birth Year"
+                android:text="@string/employee_birth_year"
                 android:layout_weight="1"
                 />
             <EditText
@@ -234,7 +234,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/carMotorbikeRB">
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -258,6 +259,30 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_margin="10dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/empCarType"
+                android:textSize="17sp"
+                android:text="@string/car_type"
+                android:layout_weight="1"/>
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/carType"
+                android:hint="@string/car_type"
+                android:layout_weight="1"
+                android:inputType="text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
             android:visibility="gone"
             android:id="@+id/dynamicSwitch">
 
@@ -266,7 +291,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/EmpSideCarDisplay"
                 android:textSize="17sp"
-                android:text="Has Side Car"
+                android:text="@string/has_side_car"
                 android:layout_weight="1"
                 android:inputType="text"/>
             <Switch
@@ -274,10 +299,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="150dp"
                 android:layout_weight="1"
-
+                android:id="@+id/extracarswitch"
                 android:checked="false"
-                android:textOff="No"
-                android:textOn="Yes"
+                android:textOff="@string/no"
+                android:textOn="@string/yes"
                 android:textSize="17sp"
                 android:textColor="#f00"
                 />
@@ -362,7 +387,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/EmpRegister"
                 android:layout_weight="1"
-                android:text="Register"
+                android:text="@string/register"
                 android:textSize="17sp"
                 android:onClick="validateForm"
                 android:textAlignment="center"/>

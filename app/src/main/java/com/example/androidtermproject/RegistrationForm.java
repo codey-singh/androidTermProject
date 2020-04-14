@@ -2,10 +2,14 @@ package com.example.androidtermproject;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +22,11 @@ public class RegistrationForm extends AppCompatActivity {
     LinearLayout dynamicLL;
     TextView empManualData;
     EditText manualData;
+    LinearLayout dynamicSwitch;
+    Switch extraCar;
+    RadioGroup carMotorbike;
+    RadioButton empCar;
+    RadioButton empBike;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +43,16 @@ public class RegistrationForm extends AppCompatActivity {
         dynamicLL = findViewById(R.id.dynamicLL);
         empManualData = findViewById(R.id.EmpManual_Data);
         manualData = findViewById(R.id.Manual_Data);
+        extraCar = findViewById(R.id.extracarswitch);
         empTypeSpinner = findViewById(R.id.EmpTypeSpinner);
+        carMotorbike = findViewById(R.id.carMotorbikeRB);
+        dynamicSwitch = findViewById(R.id.dynamicSwitch);
+        empCar = findViewById(R.id.EmpCar);
+        empBike = findViewById(R.id.EmpMotorBike);
+
+
+
+
         empTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

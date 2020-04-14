@@ -21,6 +21,13 @@
     <string name="last_name">Last Name</string>
     <string name="invalid_name">Enter Correct Name</string>
 
+    <string name="has_side_car">Has Side Car</string>
+    <string name="register">Register</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="car_type">Car Type</string>
+
+
 
     <string-array name="EmployeeType">
         <item>Choose a Type</item>
