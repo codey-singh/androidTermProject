@@ -234,7 +234,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/CarMotorbike">
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -250,6 +251,48 @@
                     android:layout_weight="1"
                     android:textSize="17sp"
                     android:text="@string/motorbike"/>
+
+            </RadioGroup>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            android:visibility="gone"
+            android:id="@+id/dynamicRG">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/EmpSideCarDisplay"
+                android:textSize="17sp"
+                android:text="Has Side Car"
+                android:layout_weight="1"
+                android:inputType="text"/>
+            <RadioGroup
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:id="@+id/RGYesNo">
+
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/EmpSideCarYes"
+                    android:text="Yes"
+                    android:textSize="17sp"
+                    android:layout_weight="1"/>
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/EmpSideCarNo"
+                    android:layout_weight="1"
+                    android:textSize="17sp"
+                    android:text="No"/>
 
             </RadioGroup>
         </LinearLayout>

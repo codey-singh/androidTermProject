@@ -13,43 +13,40 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class RegistrationForm extends AppCompatActivity {
     //Variable declaration
-    EditText eFirstName, eLastName, eBirthYear, eMonthlySalary, eOccupationalRate, eEmpID, eVehicleModel, ePlateNumber;
-    Spinner empTypeSpinner;
+    EditText e_fname, e_lname, e_birthyear,e_monsal,e_occupationalRate;
+    Spinner EmpTypeSpinner;
     LinearLayout dynamicLL;
-    TextView empManualData;
-    EditText manualData;
+    TextView EmpManual_Data;
+    EditText Manual_Data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_form);
-        eFirstName = findViewById(R.id.FirstName);
-        eLastName = findViewById(R.id.LastName);
-        eBirthYear = findViewById(R.id.birth_year);
-        eMonthlySalary = findViewById(R.id.monthlySalary);
-        eOccupationalRate = findViewById(R.id.OccupationRate);
-        eVehicleModel = findViewById(R.id.VehicleModel);
-        ePlateNumber = findViewById(R.id.PlateNumber);
-        eEmpID = findViewById(R.id.EmployeeID);
+        e_fname = findViewById(R.id.FirstName);
+        e_lname = findViewById(R.id.LastName);
+        e_birthyear = findViewById(R.id.birth_year);
+        e_monsal = findViewById(R.id.monthlySalary);
+        e_occupationalRate =findViewById(R.id.OccupationRate);
         dynamicLL = findViewById(R.id.dynamicLL);
-        empManualData = findViewById(R.id.EmpManual_Data);
-        manualData = findViewById(R.id.Manual_Data);
-        empTypeSpinner = findViewById(R.id.EmpTypeSpinner);
-        empTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        EmpManual_Data = findViewById(R.id.EmpManual_Data);
+        Manual_Data = findViewById(R.id.Manual_Data);
+        EmpTypeSpinner = findViewById(R.id.EmpTypeSpinner);
+        EmpTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) {
                     dynamicLL.setVisibility(View.GONE);
                     return;
                 } else if (position == 1) {
-                    empManualData.setText("Number of Clients");
-                    manualData.setHint("Number of Clients");
+                    EmpManual_Data.setText("Number of Clients");
+                    Manual_Data.setHint("Number of Clients");
                 } else if (position == 2) {
-                    empManualData.setText("Number of Bugs");
-                    manualData.setHint("Number of Bugs");
+                    EmpManual_Data.setText("Number of Bugs");
+                    Manual_Data.setHint("Number of Bugs");
                 } else {
-                    empManualData.setText("Number of Projects");
-                    manualData.setHint("Number of Projects");
+                    EmpManual_Data.setText("Number of Projects");
+                    Manual_Data.setHint("Number of Projects");
                 }
                 dynamicLL.setVisibility(View.VISIBLE);
             }
@@ -61,79 +58,46 @@ public class RegistrationForm extends AppCompatActivity {
         });
     }
 
-    public void validateForm(View view) {
-        final String firstName = eFirstName.getText().toString();
-        final String lastName = eLastName.getText().toString();
-        final String birthYear = eBirthYear.getText().toString();
-        final String monthlySalary = eMonthlySalary.getText().toString();
-        final String occupationRate = eOccupationalRate.getText().toString();
-        final String employeeId = eEmpID.getText().toString();
-        final String vehicleModel = eVehicleModel.getText().toString();
-        final String plateNumber = ePlateNumber.getText().toString();
-        final String md = manualData.getText().toString();
-        if (firstName.equals("")) {
+    public void regfunc(View view) {
+        final String fname = e_fname.getText().toString();
+        final String lname = e_lname.getText().toString();
+        final String birthy = e_birthyear.getText().toString();
+        final String monSal = e_monsal.getText().toString();
+        final String occRate = e_occupationalRate.getText().toString();
+        final int by = Integer.parseInt(birthy);
+        //final int or = Integer.parseInt(occRate);
+        if (fname.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Please enter First name", Toast.LENGTH_SHORT);
             toast.show();
-
-        } else if (lastName.equals("")) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Please enter Last name", Toast.LENGTH_SHORT);
+            return;
+        } else if (lname.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Please enter Lastname", Toast.LENGTH_SHORT);
             toast.show();
-
-        } else if (birthYear.length() != 4) {
+            return;
+        } else if (birthy.length() != 4) {
             Toast toast = Toast.makeText(getApplicationContext(), "Enter year with 4 digits", Toast.LENGTH_SHORT);
             toast.show();
-
-        } else if (Integer.parseInt(birthYear) <= 1900 || Integer.parseInt(birthYear) > 2020) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Birth year should be after 1900 and before 2020", Toast.LENGTH_SHORT);
+            return;
+        } else if((by<=1900)||(by>2020)){
+            Toast toast = Toast.makeText(getApplicationContext(), "Birthyear should be after 1900 and before 2020", Toast.LENGTH_SHORT);
             toast.show();
-
-        } else if (monthlySalary.equals("")) {
+            return;
+        }else if (monSal.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Please enter valid salary", Toast.LENGTH_SHORT);
             toast.show();
-
-        } else if (occupationRate.equals("")) {
+            return;
+        }
+        else if (occRate.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Please enter occupational rate", Toast.LENGTH_SHORT);
             toast.show();
-
-        } else if (employeeId.equals("")) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Please enter employee ID", Toast.LENGTH_SHORT);
-            toast.show();
-
-        } else if(empTypeSpinner.getSelectedItemPosition() == 0) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Please enter employee type", Toast.LENGTH_SHORT);
-            toast.show();
+            return;
         }
-        else if (vehicleModel.equals("")) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Please enter vehicle model", Toast.LENGTH_SHORT);
+        /*else if (or<=100) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Please enter occupational rate less than 101%", Toast.LENGTH_SHORT);
             toast.show();
+            return;}*/
 
-        } else if (plateNumber.equals("")) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Please enter plate number", Toast.LENGTH_SHORT);
-            toast.show();
-
-        } else if (manualData.toString().equals("")) {
-            Toast toast = null;
-            switch (empTypeSpinner.getSelectedItem().toString()) {
-                case "Manager":
-                    toast = Toast.makeText(getApplicationContext(), "Please enter Number of Clients", Toast.LENGTH_SHORT);
-                    toast.show();
-                    break;
-                case "Programmer":
-                    toast =Toast.makeText(getApplicationContext(), "Please enter Number of Projects", Toast.LENGTH_SHORT);
-                    toast.show();
-                    break;
-                case "Tester":
-                    toast =Toast.makeText(getApplicationContext(), "Please enter Number of Bugs", Toast.LENGTH_SHORT);
-                    toast.show();
-                    break;
-            }
-        }
-        else {
-            Toast toast = Toast.makeText(getApplicationContext(), "Valid input", Toast.LENGTH_SHORT);
-            toast.show();
-
-        }
 
     }
-}
+    }
 
