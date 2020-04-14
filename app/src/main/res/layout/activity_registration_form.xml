@@ -259,7 +259,8 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_margin="10dp"
-            android:visibility="gone">
+            android:visibility="gone"
+            android:id="@+id/dynamicCarTypeLayout">
 
             <TextView
                 android:layout_width="0dp"

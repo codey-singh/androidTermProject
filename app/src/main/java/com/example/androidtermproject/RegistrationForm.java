@@ -2,6 +2,7 @@ package com.example.androidtermproject;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -16,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class RegistrationForm extends AppCompatActivity {
     //Variable declaration
-    EditText eFirstName, eLastName, eBirthYear, eMonthlySalary, eOccupationalRate, eEmpID, eVehicleModel, ePlateNumber;
+    EditText eFirstName, eLastName, eBirthYear, eMonthlySalary, eOccupationalRate, eEmpID, eVehicleModel, ePlateNumber, eCarType;
     Spinner empTypeSpinner;
     LinearLayout dynamicLL;
     TextView empManualData;
@@ -26,6 +27,7 @@ public class RegistrationForm extends AppCompatActivity {
     RadioGroup carMotorbike;
     RadioButton empCar;
     RadioButton empBike;
+    LinearLayout carTypeLL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +50,24 @@ public class RegistrationForm extends AppCompatActivity {
         dynamicSwitch = findViewById(R.id.dynamicSwitch);
         empCar = findViewById(R.id.EmpCar);
         empBike = findViewById(R.id.EmpMotorBike);
+        carTypeLL = findViewById(R.id.dynamicCarTypeLayout);
 
+        carMotorbike.setOnClickListener(new AdapterView.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(empCar.isSelected()){
+                    carTypeLL.setVisibility(View.VISIBLE);
 
+                }else if(empBike.isSelected()){
+                    dynamicSwitch.setVisibility(View.VISIBLE);
 
+                }else {
+                    carTypeLL.setVisibility(View.GONE);
+                    dynamicSwitch.setVisibility(View.GONE);
+                }
+
+            }
+        });
 
         empTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -88,6 +105,7 @@ public class RegistrationForm extends AppCompatActivity {
         final String vehicleModel = eVehicleModel.getText().toString();
         final String plateNumber = ePlateNumber.getText().toString();
         final String md = manualData.getText().toString();
+        final String carType = eCarType.getText().toString();
         if (firstName.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Please enter First name", Toast.LENGTH_SHORT);
             toast.show();
@@ -144,8 +162,10 @@ public class RegistrationForm extends AppCompatActivity {
                     toast.show();
                     break;
             }
-        }
-        else {
+        } else if (carType.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Please enter Car Type number", Toast.LENGTH_SHORT);
+            toast.show();
+        } else {
             Toast toast = Toast.makeText(getApplicationContext(), "Valid input", Toast.LENGTH_SHORT);
              toast.show();
 
