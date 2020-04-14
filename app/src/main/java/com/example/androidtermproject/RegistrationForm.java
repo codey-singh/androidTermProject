@@ -70,6 +70,7 @@ public class RegistrationForm extends AppCompatActivity {
         final String empid = e_empID.getText().toString();
         final String vehmodel = e_vehmodel.getText().toString();
         final String plateno = e_plateno.getText().toString();
+        final String md = Manual_Data.getText().toString();
         final int by = Integer.parseInt(birthy);
         //final int or = Integer.parseInt(occRate);
         if (fname.equals("")) {
@@ -116,7 +117,11 @@ public class RegistrationForm extends AppCompatActivity {
                     Toast toast = Toast.makeText(getApplicationContext(), "Please enter plate number", Toast.LENGTH_SHORT);
                     toast.show();
                     return;
-        }
+        }/*else if (md.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Please enter employee information", Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+        }*/
                  else{
             Toast toast = Toast.makeText(getApplicationContext(), "Valid input", Toast.LENGTH_SHORT);
             toast.show();
