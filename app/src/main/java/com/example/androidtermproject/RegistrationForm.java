@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class RegistrationForm extends AppCompatActivity {
     //Variable declaration
-    EditText e_fname, e_lname, e_birthyear,e_monsal,e_occupationalRate,e_empID;
+    EditText e_fname, e_lname, e_birthyear,e_monsal,e_occupationalRate,e_empID,e_vehmodel,e_plateno;
     Spinner EmpTypeSpinner;
     LinearLayout dynamicLL;
     TextView EmpManual_Data;
@@ -28,6 +28,8 @@ public class RegistrationForm extends AppCompatActivity {
         e_birthyear = findViewById(R.id.birth_year);
         e_monsal = findViewById(R.id.monthlySalary);
         e_occupationalRate =findViewById(R.id.OccupationRate);
+        e_vehmodel=findViewById(R.id.VehicleModel);
+        e_plateno=findViewById(R.id.PlateNumber);
         e_empID =findViewById(R.id.EmployeeID);
         dynamicLL = findViewById(R.id.dynamicLL);
         EmpManual_Data = findViewById(R.id.EmpManual_Data);
@@ -66,6 +68,8 @@ public class RegistrationForm extends AppCompatActivity {
         final String monSal = e_monsal.getText().toString();
         final String occRate = e_occupationalRate.getText().toString();
         final String empid = e_empID.getText().toString();
+        final String vehmodel = e_vehmodel.getText().toString();
+        final String plateno = e_plateno.getText().toString();
         final int by = Integer.parseInt(birthy);
         //final int or = Integer.parseInt(occRate);
         if (fname.equals("")) {
@@ -102,6 +106,22 @@ public class RegistrationForm extends AppCompatActivity {
             Toast toast = Toast.makeText(getApplicationContext(), "Please enter employee ID", Toast.LENGTH_SHORT);
             toast.show();
             return;
+        }
+             else if (vehmodel.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Please enter vehicle model", Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+        }
+                 else if (plateno.equals("")) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "Please enter plate number", Toast.LENGTH_SHORT);
+                    toast.show();
+                    return;
+        }
+                 else{
+            Toast toast = Toast.makeText(getApplicationContext(), "Valid input", Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+
         }
 
     }
