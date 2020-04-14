@@ -25,7 +25,6 @@ public class ListAdapter extends ArrayAdapter<IEmployee> {
         TextView eId;
         TextView eAge;
         TextView ePost;
-
     }
 
     public ListAdapter(@NonNull Context context, List<IEmployee> EmployeesData) {

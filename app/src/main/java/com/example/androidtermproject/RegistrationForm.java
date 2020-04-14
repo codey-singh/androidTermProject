@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class RegistrationForm extends AppCompatActivity {
     //Variable declaration
     EditText eFirstName, eLastName, eBirthYear, eMonthlySalary, eOccupationalRate, eEmpID, eVehicleModel, ePlateNumber;
-    Spinner EmpTypeSpinner;
+    Spinner empTypeSpinner;
     LinearLayout dynamicLL;
     TextView empManualData;
     EditText manualData;
@@ -34,8 +34,8 @@ public class RegistrationForm extends AppCompatActivity {
         dynamicLL = findViewById(R.id.dynamicLL);
         empManualData = findViewById(R.id.EmpManual_Data);
         manualData = findViewById(R.id.Manual_Data);
-        EmpTypeSpinner = findViewById(R.id.EmpTypeSpinner);
-        EmpTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        empTypeSpinner = findViewById(R.id.EmpTypeSpinner);
+        empTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) {
@@ -69,10 +69,8 @@ public class RegistrationForm extends AppCompatActivity {
         final String occupationRate = eOccupationalRate.getText().toString();
         final String employeeId = eEmpID.getText().toString();
         final String vehicleModel = eVehicleModel.getText().toString();
-
         final String plateNumber = ePlateNumber.getText().toString();
         final String md = manualData.getText().toString();
-        final int by = Integer.parseInt(birthYear);
         if (firstName.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Please enter First name", Toast.LENGTH_SHORT);
             toast.show();
@@ -85,7 +83,7 @@ public class RegistrationForm extends AppCompatActivity {
             Toast toast = Toast.makeText(getApplicationContext(), "Enter year with 4 digits", Toast.LENGTH_SHORT);
             toast.show();
 
-        } else if ((by <= 1900) || (by > 2020)) {
+        } else if (Integer.parseInt(birthYear) <= 1900 || Integer.parseInt(birthYear) > 2020) {
             Toast toast = Toast.makeText(getApplicationContext(), "Birth year should be after 1900 and before 2020", Toast.LENGTH_SHORT);
             toast.show();
 
@@ -101,7 +99,11 @@ public class RegistrationForm extends AppCompatActivity {
             Toast toast = Toast.makeText(getApplicationContext(), "Please enter employee ID", Toast.LENGTH_SHORT);
             toast.show();
 
-        } else if (vehicleModel.equals("")) {
+        } else if(empTypeSpinner.getSelectedItemPosition() == 0) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Please enter employee type", Toast.LENGTH_SHORT);
+            toast.show();
+        }
+        else if (vehicleModel.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Please enter vehicle model", Toast.LENGTH_SHORT);
             toast.show();
 
@@ -109,7 +111,24 @@ public class RegistrationForm extends AppCompatActivity {
             Toast toast = Toast.makeText(getApplicationContext(), "Please enter plate number", Toast.LENGTH_SHORT);
             toast.show();
 
-        } else {
+        } else if (manualData.toString().equals("")) {
+            Toast toast = null;
+            switch (empTypeSpinner.getSelectedItem().toString()) {
+                case "Manager":
+                    toast = Toast.makeText(getApplicationContext(), "Please enter Number of Clients", Toast.LENGTH_SHORT);
+                    toast.show();
+                    break;
+                case "Programmer":
+                    toast =Toast.makeText(getApplicationContext(), "Please enter Number of Projects", Toast.LENGTH_SHORT);
+                    toast.show();
+                    break;
+                case "Tester":
+                    toast =Toast.makeText(getApplicationContext(), "Please enter Number of Bugs", Toast.LENGTH_SHORT);
+                    toast.show();
+                    break;
+            }
+        }
+        else {
             Toast toast = Toast.makeText(getApplicationContext(), "Valid input", Toast.LENGTH_SHORT);
             toast.show();
 
