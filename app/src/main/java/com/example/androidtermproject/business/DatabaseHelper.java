@@ -100,7 +100,6 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
 
     @Override
     public boolean removeEmployee(int id) {
-
         return false;
     }
 

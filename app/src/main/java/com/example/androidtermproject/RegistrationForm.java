@@ -13,27 +13,27 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class RegistrationForm extends AppCompatActivity {
     //Variable declaration
-    EditText e_fname, e_lname, e_birthyear,e_monsal,e_occupationalRate,e_empID,e_vehmodel,e_plateno;
+    EditText eFirstName, eLastName, eBirthYear, eMonthlySalary, eOccupationalRate, eEmpID, eVehicleModel, ePlateNumber;
     Spinner EmpTypeSpinner;
     LinearLayout dynamicLL;
-    TextView EmpManual_Data;
-    EditText Manual_Data;
+    TextView empManualData;
+    EditText manualData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_form);
-        e_fname = findViewById(R.id.FirstName);
-        e_lname = findViewById(R.id.LastName);
-        e_birthyear = findViewById(R.id.birth_year);
-        e_monsal = findViewById(R.id.monthlySalary);
-        e_occupationalRate =findViewById(R.id.OccupationRate);
-        e_vehmodel=findViewById(R.id.VehicleModel);
-        e_plateno=findViewById(R.id.PlateNumber);
-        e_empID =findViewById(R.id.EmployeeID);
+        eFirstName = findViewById(R.id.FirstName);
+        eLastName = findViewById(R.id.LastName);
+        eBirthYear = findViewById(R.id.birth_year);
+        eMonthlySalary = findViewById(R.id.monthlySalary);
+        eOccupationalRate = findViewById(R.id.OccupationRate);
+        eVehicleModel = findViewById(R.id.VehicleModel);
+        ePlateNumber = findViewById(R.id.PlateNumber);
+        eEmpID = findViewById(R.id.EmployeeID);
         dynamicLL = findViewById(R.id.dynamicLL);
-        EmpManual_Data = findViewById(R.id.EmpManual_Data);
-        Manual_Data = findViewById(R.id.Manual_Data);
+        empManualData = findViewById(R.id.EmpManual_Data);
+        manualData = findViewById(R.id.Manual_Data);
         EmpTypeSpinner = findViewById(R.id.EmpTypeSpinner);
         EmpTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -42,14 +42,14 @@ public class RegistrationForm extends AppCompatActivity {
                     dynamicLL.setVisibility(View.GONE);
                     return;
                 } else if (position == 1) {
-                    EmpManual_Data.setText("Number of Clients");
-                    Manual_Data.setHint("Number of Clients");
+                    empManualData.setText("Number of Clients");
+                    manualData.setHint("Number of Clients");
                 } else if (position == 2) {
-                    EmpManual_Data.setText("Number of Bugs");
-                    Manual_Data.setHint("Number of Bugs");
+                    empManualData.setText("Number of Bugs");
+                    manualData.setHint("Number of Bugs");
                 } else {
-                    EmpManual_Data.setText("Number of Projects");
-                    Manual_Data.setHint("Number of Projects");
+                    empManualData.setText("Number of Projects");
+                    manualData.setHint("Number of Projects");
                 }
                 dynamicLL.setVisibility(View.VISIBLE);
             }
@@ -61,74 +61,60 @@ public class RegistrationForm extends AppCompatActivity {
         });
     }
 
-    public void regfunc(View view) {
-        final String fname = e_fname.getText().toString();
-        final String lname = e_lname.getText().toString();
-        final String birthy = e_birthyear.getText().toString();
-        final String monSal = e_monsal.getText().toString();
-        final String occRate = e_occupationalRate.getText().toString();
-        final String empid = e_empID.getText().toString();
-        final String vehmodel = e_vehmodel.getText().toString();
-        final String plateno = e_plateno.getText().toString();
-        final String md = Manual_Data.getText().toString();
-        final int by = Integer.parseInt(birthy);
-        //final int or = Integer.parseInt(occRate);
-        if (fname.equals("")) {
+    public void validateForm(View view) {
+        final String firstName = eFirstName.getText().toString();
+        final String lastName = eLastName.getText().toString();
+        final String birthYear = eBirthYear.getText().toString();
+        final String monthlySalary = eMonthlySalary.getText().toString();
+        final String occupationRate = eOccupationalRate.getText().toString();
+        final String employeeId = eEmpID.getText().toString();
+        final String vehicleModel = eVehicleModel.getText().toString();
+
+        final String plateNumber = ePlateNumber.getText().toString();
+        final String md = manualData.getText().toString();
+        final int by = Integer.parseInt(birthYear);
+        if (firstName.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Please enter First name", Toast.LENGTH_SHORT);
             toast.show();
-            return;
-        } else if (lname.equals("")) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Please enter Lastname", Toast.LENGTH_SHORT);
+
+        } else if (lastName.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Please enter Last name", Toast.LENGTH_SHORT);
             toast.show();
-            return;
-        } else if (birthy.length() != 4) {
+
+        } else if (birthYear.length() != 4) {
             Toast toast = Toast.makeText(getApplicationContext(), "Enter year with 4 digits", Toast.LENGTH_SHORT);
             toast.show();
-            return;
-        } else if((by<=1900)||(by>2020)){
-            Toast toast = Toast.makeText(getApplicationContext(), "Birthyear should be after 1900 and before 2020", Toast.LENGTH_SHORT);
+
+        } else if ((by <= 1900) || (by > 2020)) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Birth year should be after 1900 and before 2020", Toast.LENGTH_SHORT);
             toast.show();
-            return;
-        }else if (monSal.equals("")) {
+
+        } else if (monthlySalary.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Please enter valid salary", Toast.LENGTH_SHORT);
             toast.show();
-            return;
-        }
-        else if (occRate.equals("")) {
+
+        } else if (occupationRate.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Please enter occupational rate", Toast.LENGTH_SHORT);
             toast.show();
-            return;
-        }
-        /*else if (or<=100) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Please enter occupational rate less than 101%", Toast.LENGTH_SHORT);
-            toast.show();
-            return;}*/
-        else if (empid.equals("")) {
+
+        } else if (employeeId.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Please enter employee ID", Toast.LENGTH_SHORT);
             toast.show();
-            return;
-        }
-             else if (vehmodel.equals("")) {
+
+        } else if (vehicleModel.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Please enter vehicle model", Toast.LENGTH_SHORT);
             toast.show();
-            return;
-        }
-                 else if (plateno.equals("")) {
-                    Toast toast = Toast.makeText(getApplicationContext(), "Please enter plate number", Toast.LENGTH_SHORT);
-                    toast.show();
-                    return;
-        }/*else if (md.equals("")) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Please enter employee information", Toast.LENGTH_SHORT);
+
+        } else if (plateNumber.equals("")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Please enter plate number", Toast.LENGTH_SHORT);
             toast.show();
-            return;
-        }*/
-                 else{
+
+        } else {
             Toast toast = Toast.makeText(getApplicationContext(), "Valid input", Toast.LENGTH_SHORT);
             toast.show();
-            return;
 
         }
 
     }
-    }
+}
 

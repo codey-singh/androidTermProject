@@ -334,7 +334,7 @@
                 android:layout_weight="1"
                 android:text="Register"
                 android:textSize="17sp"
-                android:onClick="regfunc"
+                android:onClick="validateForm"
                 android:textAlignment="center"/>
         </LinearLayout>
 
