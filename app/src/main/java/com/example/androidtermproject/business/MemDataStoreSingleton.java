@@ -80,7 +80,7 @@ public class MemDataStoreSingleton implements IDataService {
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public boolean removeVehicle(int id) {
-        return employees.removeIf(employee -> employee.getEmpId() == id);
+        return vehicles.removeIf(vehicle -> vehicle.getVehicleId() == id);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)

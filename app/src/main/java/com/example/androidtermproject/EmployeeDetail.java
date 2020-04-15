@@ -2,8 +2,10 @@ package com.example.androidtermproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,6 +15,7 @@ import com.example.androidtermproject.business.IDataService;
 import com.example.androidtermproject.business.MemDataStoreSingleton;
 import com.example.androidtermproject.models.Car;
 import com.example.androidtermproject.models.Employee;
+import com.example.androidtermproject.models.IEmployee;
 import com.example.androidtermproject.models.IVehicle;
 import com.example.androidtermproject.models.Manager;
 import com.example.androidtermproject.models.Motorcycle;
@@ -25,6 +28,8 @@ public class EmployeeDetail extends AppCompatActivity {
             colorDetails, typeDetails, hasSideCar, achievementDisplay;
     LinearLayout carTypeLL, hasSideLL;
     IDataService dataService;
+    Employee employee;
+    IVehicle v;
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +48,7 @@ public class EmployeeDetail extends AppCompatActivity {
         hasSideLL = findViewById(R.id.hasSideLL);
         hasSideCar = findViewById(R.id.hasSideCar);
         achievementDisplay = findViewById(R.id.achievementDisplay);
-        Employee employee= (Employee) getIntent().getSerializableExtra("Employee");
+        employee= (Employee) getIntent().getSerializableExtra("Employee");
         Toast.makeText(this,""+employee.getRole(),Toast.LENGTH_SHORT).show();
 
         int employeeId = employee.getId();
@@ -53,7 +58,7 @@ public class EmployeeDetail extends AppCompatActivity {
 
         dataService = DatabaseHelper.getInstance(this);
 
-        IVehicle v = dataService.getVehicleForEmployee(employeeId);
+        v = dataService.getVehicleForEmployee(employeeId);
         if (v.getVehicleType().equals("Car")) {
             hasACarOrBike.setText("Employee has a Car");
             carModelDetails.setText(((Car) v).getMake());
@@ -85,7 +90,17 @@ public class EmployeeDetail extends AppCompatActivity {
             achievementDisplay.setText("He/She has corrected " + bugs + " bugs" );
         } else{
             int projectCount = ((Programmer) employee).getNbProjects();
-            achievementDisplay.setText("He/She has completed" + projectCount + " Projects" );
+            achievementDisplay.setText("He/She has completed " + projectCount + " Projects" );
         }
+
+
     }
+    public void deleteEmployee(View view)
+    {
+        dataService.removeEmployee(employee.getId());
+        dataService.removeVehicle(v.getVehicleId());
+        Intent intent=new Intent(this,MainActivity.class);
+        startActivity(intent);
+    }
+
 }

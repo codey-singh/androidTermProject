@@ -1,5 +1,6 @@
 package com.example.androidtermproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Adapter;
@@ -211,6 +212,8 @@ public class RegistrationForm extends AppCompatActivity {
 
             dataService.addEmployee(employee);
             dataService.addVehicle(vehicle);
+            Intent intent=new Intent(this,MainActivity.class);
+            startActivity(intent);
         }
 
     }
