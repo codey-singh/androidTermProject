@@ -115,7 +115,7 @@
                 android:id="@+id/monthlySalary"
                 android:hint="@string/monthly_salary"
                 android:layout_weight="1"
-                android:inputType="text"/>
+                android:inputType="numberDecimal"/>
 
         </LinearLayout>
 
@@ -139,7 +139,7 @@
                 android:id="@+id/OccupationRate"
                 android:hint="Occupation rate"
                 android:layout_weight="1"
-                android:inputType="text"/>
+                android:inputType="numberDecimal"/>
 
         </LinearLayout>
 
@@ -163,7 +163,7 @@
                 android:id="@+id/EmployeeID"
                 android:hint="@string/employee_id"
                 android:layout_weight="1"
-                android:inputType="text"/>
+                android:inputType="number"/>
 
         </LinearLayout>
         <LinearLayout
@@ -212,7 +212,7 @@
                 android:id="@+id/Manual_Data"
                 android:hint="@string/manual_data"
                 android:layout_weight="1"
-                android:inputType="text"/>
+                android:inputType="number"/>
 
         </LinearLayout>
 
@@ -228,8 +228,7 @@
                 android:id="@+id/EmpVehicle"
                 android:textSize="17sp"
                 android:text="@string/vehicle"
-                android:layout_weight="1"
-                android:inputType="text"/>
+                android:layout_weight="1"/>
             <RadioGroup
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -243,7 +242,8 @@
                     android:id="@+id/EmpCar"
                     android:text="@string/car"
                     android:textSize="17sp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:checked="true"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
@@ -259,7 +259,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_margin="10dp"
-            android:visibility="gone"
+            android:visibility="visible"
             android:id="@+id/dynamicCarTypeLayout">
 
             <TextView

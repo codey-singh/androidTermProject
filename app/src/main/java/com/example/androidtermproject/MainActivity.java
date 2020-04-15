@@ -13,8 +13,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.androidtermproject.business.DatabaseHelper;
 import com.example.androidtermproject.business.IDataService;
 import com.example.androidtermproject.business.MemDataStoreSingleton;
+import com.example.androidtermproject.business.exceptions.InvalidParamException;
 import com.example.androidtermproject.models.Employee;
 import com.example.androidtermproject.models.IEmployee;
 
@@ -32,19 +34,30 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         searchBar=findViewById(R.id.searchBar);
         listview = findViewById(R.id.List_Employees);
-        dataService = MemDataStoreSingleton.getInstance();
-        ListAdapter listAdapter = new ListAdapter(this, dataService.getEmployees());
+        dataService = DatabaseHelper.getInstance(this);
+        ListAdapter listAdapter = null;
+        try {
+            listAdapter = new ListAdapter(this, dataService.getEmployees());
+        } catch (InvalidParamException e) {
+            e.printStackTrace();
+        }
         listview.setAdapter(listAdapter);
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ArrayList <IEmployee> employees=dataService.getEmployees();
+                ArrayList <IEmployee> employees= null;
+                try {
+                    employees = dataService.getEmployees();
+                } catch (InvalidParamException e) {
+                    e.printStackTrace();
+                }
                 IEmployee e=(Employee) employees.get(position);
                 Intent intent=new Intent(MainActivity.this,EmployeeDetail.class);
                 intent.putExtra("Employee", (Serializable) e);
                 startActivity(intent);
             }
         });
+        ListAdapter finalListAdapter = listAdapter;
         searchBar.addTextChangedListener(new TextWatcher() {
 
             @Override
@@ -52,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 // TODO Auto-generated method stub
                 //MainActivity.this.adapt.getFilter().filter(s);
                 String searchString=searchBar.getText().toString();
-                listAdapter.filter(searchString);
+                finalListAdapter.filter(searchString);
             }
 
             @Override

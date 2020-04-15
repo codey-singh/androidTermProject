@@ -4,6 +4,7 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
+import com.example.androidtermproject.business.exceptions.InvalidParamException;
 import com.example.androidtermproject.models.Car;
 import com.example.androidtermproject.models.IEmployee;
 import com.example.androidtermproject.models.IVehicle;
@@ -20,7 +21,7 @@ public class MemDataStoreSingleton implements IDataService {
     private ArrayList<IEmployee> employees = new ArrayList<>();
     private ArrayList<IVehicle> vehicles = new ArrayList<>();
 
-    private MemDataStoreSingleton() {
+    private MemDataStoreSingleton() throws InvalidParamException {
         Car car1=new Car(1,"Honda","A1234","Red","Sedan","4-Door",100);
         Car car2=new Car(2,"Toyota","B1234","Black","Sedan","4-Door",200);
         Motorcycle bike1=new Motorcycle(3,"Suzuki","C007","Blue","Sports bike",false,300);
@@ -37,7 +38,7 @@ public class MemDataStoreSingleton implements IDataService {
 
     private static MemDataStoreSingleton instance;
 
-    public static MemDataStoreSingleton getInstance() {
+    public static MemDataStoreSingleton getInstance() throws InvalidParamException {
         if (instance == null) {
             instance = new MemDataStoreSingleton();
         }
@@ -63,7 +64,7 @@ public class MemDataStoreSingleton implements IDataService {
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public IEmployee getEmployee(int id) {
-        return (IEmployee) employees.stream().filter(employee -> employee.getEmpId() == id);
+        return (IEmployee) employees.stream().filter(employee -> employee.getEmpId() == id).toArray()[0];
     }
 
     @Override
@@ -85,6 +86,6 @@ public class MemDataStoreSingleton implements IDataService {
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public IVehicle getVehicleForEmployee(int eId) {
-        return (IVehicle) vehicles.stream().filter(iVehicle -> iVehicle.getBelongsTo() == eId);
+        return (IVehicle) vehicles.stream().filter(iVehicle -> iVehicle.getBelongsTo() == eId).toArray()[0];
     }
 }

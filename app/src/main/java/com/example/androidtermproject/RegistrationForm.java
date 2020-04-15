@@ -15,10 +15,23 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.androidtermproject.business.DatabaseHelper;
+import com.example.androidtermproject.business.IDataService;
+import com.example.androidtermproject.business.exceptions.InvalidParamException;
+import com.example.androidtermproject.models.Car;
+import com.example.androidtermproject.models.Employee;
+import com.example.androidtermproject.models.Manager;
+import com.example.androidtermproject.models.Motorcycle;
+import com.example.androidtermproject.models.Programmer;
+import com.example.androidtermproject.models.Tester;
+import com.example.androidtermproject.models.Vehicle;
+
+import java.util.Calendar;
+
 public class RegistrationForm extends AppCompatActivity {
     //Variable declaration
     EditText eFirstName, eLastName, eBirthYear, eMonthlySalary, eOccupationalRate, eEmpID, eVehicleModel, ePlateNumber, eCarType;
-    Spinner empTypeSpinner;
+    Spinner empTypeSpinner, colorSpinner;
     LinearLayout dynamicLL;
     TextView empManualData;
     EditText manualData;
@@ -28,11 +41,13 @@ public class RegistrationForm extends AppCompatActivity {
     RadioButton empCar;
     RadioButton empBike;
     LinearLayout carTypeLL;
+    IDataService dataService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_form);
+        dataService = DatabaseHelper.getInstance(this);
         eFirstName = findViewById(R.id.FirstName);
         eLastName = findViewById(R.id.LastName);
         eBirthYear = findViewById(R.id.birth_year);
@@ -41,6 +56,7 @@ public class RegistrationForm extends AppCompatActivity {
         eVehicleModel = findViewById(R.id.VehicleModel);
         ePlateNumber = findViewById(R.id.PlateNumber);
         eEmpID = findViewById(R.id.EmployeeID);
+        eCarType = findViewById(R.id.carType);
         dynamicLL = findViewById(R.id.dynamicLL);
         empManualData = findViewById(R.id.EmpManual_Data);
         manualData = findViewById(R.id.Manual_Data);
@@ -51,9 +67,10 @@ public class RegistrationForm extends AppCompatActivity {
         empCar = findViewById(R.id.EmpCar);
         empBike = findViewById(R.id.EmpMotorBike);
         carTypeLL = findViewById(R.id.dynamicCarTypeLayout);
+        colorSpinner = findViewById(R.id.VColorSpinner);
 
         carMotorbike.setOnCheckedChangeListener((group, checkedId) -> {
-            if(checkedId == R.id.EmpCar) {
+            if (checkedId == R.id.EmpCar) {
                 carTypeLL.setVisibility(View.VISIBLE);
                 dynamicSwitch.setVisibility(View.GONE);
             } else if (checkedId == R.id.EmpMotorBike) {
@@ -88,7 +105,7 @@ public class RegistrationForm extends AppCompatActivity {
         });
     }
 
-    public void validateForm(View view) {
+    public void validateForm(View view) throws InvalidParamException {
         final String firstName = eFirstName.getText().toString();
         final String lastName = eLastName.getText().toString();
         final String birthYear = eBirthYear.getText().toString();
@@ -127,7 +144,7 @@ public class RegistrationForm extends AppCompatActivity {
             Toast toast = Toast.makeText(getApplicationContext(), "Please enter employee ID", Toast.LENGTH_SHORT);
             toast.show();
 
-        } else if(empTypeSpinner.getSelectedItemPosition() == 0) {
+        } else if (empTypeSpinner.getSelectedItemPosition() == 0) {
             Toast toast = Toast.makeText(getApplicationContext(), "Please enter employee type", Toast.LENGTH_SHORT);
             toast.show();
         }
@@ -147,21 +164,53 @@ public class RegistrationForm extends AppCompatActivity {
                     toast.show();
                     break;
                 case "Programmer":
-                    toast =Toast.makeText(getApplicationContext(), "Please enter Number of Projects", Toast.LENGTH_SHORT);
+                    toast = Toast.makeText(getApplicationContext(), "Please enter Number of Projects", Toast.LENGTH_SHORT);
                     toast.show();
                     break;
                 case "Tester":
-                    toast =Toast.makeText(getApplicationContext(), "Please enter Number of Bugs", Toast.LENGTH_SHORT);
+                    toast = Toast.makeText(getApplicationContext(), "Please enter Number of Bugs", Toast.LENGTH_SHORT);
                     toast.show();
                     break;
             }
-        } else if (carType.equals("")) {
+        } else if (carMotorbike.getCheckedRadioButtonId() == R.id.EmpCar && carType.equals("")) {
             Toast toast = Toast.makeText(getApplicationContext(), "Please enter Car Type", Toast.LENGTH_SHORT);
             toast.show();
         } else {
             Toast toast = Toast.makeText(getApplicationContext(), "Valid input", Toast.LENGTH_SHORT);
-             toast.show();
+            toast.show();
+            Employee employee = null;
+            int presentYear = Calendar.getInstance().get(Calendar.YEAR);
+            int age = presentYear - Integer.parseInt(birthYear);
+            switch (empTypeSpinner.getSelectedItem().toString()) {
+                case "Manager":
+                    employee = new Manager(Integer.parseInt(employeeId), firstName + " " + lastName, age, Integer.parseInt(birthYear),
+                            Double.parseDouble(monthlySalary), Integer.parseInt(md), Double.parseDouble(occupationRate));
+                    break;
+                case "Programmer":
+                    employee = new Programmer(Integer.parseInt(employeeId), firstName + " " + lastName, age, Integer.parseInt(birthYear),
+                            Double.parseDouble(monthlySalary), Integer.parseInt(md), Double.parseDouble(occupationRate));
+                    break;
+                case "Tester":
+                    employee = new Tester(Integer.parseInt(employeeId), firstName + " " + lastName, age, Integer.parseInt(birthYear),
+                            Double.parseDouble(monthlySalary), Integer.parseInt(md), Double.parseDouble(occupationRate));
+                    break;
+                default:
+                    break;
+            }
+            Vehicle vehicle = null;
+            switch (carMotorbike.getCheckedRadioButtonId()) {
+                case R.id.EmpCar:
+                    vehicle = new Car(0, vehicleModel, plateNumber, colorSpinner.getSelectedItem().toString(), "", carType, employee.getEmpId());
+                    break;
+                case R.id.EmpMotorBike:
+                    vehicle = new Motorcycle(0, vehicleModel, plateNumber, colorSpinner.getSelectedItem().toString(), "", extraCar.isActivated(), employee.getEmpId());
+                    break;
+                default:
+                    break;
+            }
 
+            dataService.addEmployee(employee);
+            dataService.addVehicle(vehicle);
         }
 
     }

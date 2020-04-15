@@ -1,10 +1,12 @@
 package com.example.androidtermproject.models;
 
+import com.example.androidtermproject.business.exceptions.InvalidParamException;
+
 public class Tester extends Employee {
 
     private final int GAIN_FACTOR_ERROR = 10;
 
-    public Tester(int id, String name, int age, int birthYear, double monthlySalary, int nbBugs, double occupationRate) {
+    public Tester(int id, String name, int age, int birthYear, double monthlySalary, int nbBugs, double occupationRate) throws InvalidParamException {
         super(id, name, age, birthYear, monthlySalary, occupationRate);
         this.nbBugs = nbBugs;
     }

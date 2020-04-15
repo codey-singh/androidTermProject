@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.androidtermproject.business.DatabaseHelper;
 import com.example.androidtermproject.business.IDataService;
 import com.example.androidtermproject.business.MemDataStoreSingleton;
 import com.example.androidtermproject.models.Car;
@@ -50,7 +51,7 @@ public class EmployeeDetail extends AppCompatActivity {
         name.setText(""+employee.getName() + ", a " +employee.getRole());
         age.setText(""+employee.getAge());
 
-        dataService = MemDataStoreSingleton.getInstance();
+        dataService = DatabaseHelper.getInstance(this);
 
         IVehicle v = dataService.getVehicleForEmployee(employeeId);
         if (v.getVehicleType().equals("Car")) {
@@ -73,7 +74,7 @@ public class EmployeeDetail extends AppCompatActivity {
             hasSideLL.setVisibility(View.VISIBLE);
         }
 
-        occupationRate.setText(""+employee.getRate());
+        occupationRate.setText(""+employee.getOccupationRate());
         annualIncome.setText(""+employee.getMonthlySalary()*12);
 
         if(employee.getRole().equals("Manager")){

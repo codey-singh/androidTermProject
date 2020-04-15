@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import com.example.androidtermproject.business.exceptions.InvalidParamException;
 import com.example.androidtermproject.models.Car;
 import com.example.androidtermproject.models.IEmployee;
 import com.example.androidtermproject.models.IVehicle;
@@ -47,7 +48,7 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
     }
 
     @Override
-    public ArrayList<IEmployee> getEmployees() {
+    public ArrayList<IEmployee> getEmployees() throws InvalidParamException {
         SQLiteDatabase db = getReadableDatabase();
         ArrayList<IEmployee> employees = new ArrayList<>();
         Cursor cursor = db.rawQuery("SELECT * FROM Employees", new String[]{});
@@ -70,9 +71,8 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
                 values.put("age", ((Programmer) employee).getAge());
                 values.put("birthYear", ((Programmer) employee).getBirthYear());
                 values.put("monthlySalary", ((Programmer) employee).getMonthlySalary());
-                values.put("rate", ((Programmer) employee).getRate());
+                values.put("rate", ((Programmer) employee).getOccupationRate());
                 values.put("nbProjects", ((Programmer) employee).getNbProjects());
-                values.put("occupationRate", ((Programmer) employee).getOccupationRate());
                 break;
             case "Tester":
                 values.put("id", employee.getEmpId());
@@ -80,9 +80,8 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
                 values.put("age", ((Tester) employee).getAge());
                 values.put("birthYear", ((Tester) employee).getBirthYear());
                 values.put("monthlySalary", ((Tester) employee).getMonthlySalary());
-                values.put("rate", ((Tester) employee).getRate());
+                values.put("rate", ((Tester) employee).getOccupationRate());
                 values.put("nbBugs", ((Tester) employee).getNbBugs());
-                values.put("occupationRate", ((Tester) employee).getOccupationRate());
                 break;
             case "Manager":
                 values.put("id", employee.getEmpId());
@@ -90,11 +89,11 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
                 values.put("age", ((Manager) employee).getAge());
                 values.put("birthYear", ((Manager) employee).getBirthYear());
                 values.put("monthlySalary", ((Manager) employee).getMonthlySalary());
-                values.put("rate", ((Manager) employee).getRate());
                 values.put("nbClients", ((Manager) employee).getNbClients());
-                values.put("occupationRate", ((Manager) employee).getOccupationRate());
+                values.put("rate", ((Manager) employee).getOccupationRate());
                 break;
         }
+        values.put("role", employee.getRole());
         return db.insert("Employees", null, values) != -1;
     }
 
@@ -105,7 +104,7 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
     }
 
     @Override
-    public IEmployee getEmployee(int id) {
+    public IEmployee getEmployee(int id) throws InvalidParamException {
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM Employees", new String[]{});
         IEmployee employee = null;
@@ -127,21 +126,19 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
         ContentValues values = new ContentValues();
         switch (vehicle.getVehicleType()) {
             case "Car":
-                values.put("id", vehicle.getVehicleId());//int id, String make, String plate, String color, String category, String type, int belongsTo
                 values.put("make", ((Car)vehicle).getMake());
                 values.put("plate", ((Car) vehicle).getPlate());
                 values.put("color", ((Car) vehicle).getColor());
-                values.put("category", ((Car) vehicle).getCategory());
+                values.put("category", "Car");
                 values.put("type", ((Car) vehicle).getType());
                 values.put("belongsTo", ((Car) vehicle).getBelongsTo()); //hasSideCar
 
                 break;
             case "Motorcycle":
-                values.put("id", vehicle.getVehicleId());//int id, String make, String plate, String color, String category, String type, int belongsTo
                 values.put("make", ((Motorcycle)vehicle).getMake());
                 values.put("plate", ((Motorcycle) vehicle).getPlate());
                 values.put("color", ((Motorcycle) vehicle).getColor());
-                values.put("category", ((Motorcycle) vehicle).getCategory());
+                values.put("category", "Motorcycle");
                 values.put("type", ((Motorcycle) vehicle).isHasSideCar());
                 values.put("belongsTo", ((Motorcycle) vehicle).getBelongsTo());
                 values.put("hasSideCar", ((Motorcycle) vehicle).isHasSideCar()); //hasSideCar
@@ -160,17 +157,15 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
     @Override
     public IVehicle getVehicleForEmployee(int eId) {
         SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM Employees", new String[]{});
+        Cursor cursor = db.rawQuery("SELECT * FROM Vehicles WHERE belongsTo = ?", new String[]{""+eId});
         IVehicle vehicle = null;
-        while(!cursor.isAfterLast()){
-            vehicle = vehicleMapper(cursor);
-            cursor.moveToNext();
-        }
+        cursor.moveToFirst();
+        vehicle = vehicleMapper(cursor);
         return vehicle;
     }
 
     private IVehicle vehicleMapper(Cursor cursor) {
-        switch(cursor.getString(cursor.getColumnIndex("type"))) {
+        switch(cursor.getString(cursor.getColumnIndex("category"))) {
             case "Car":
                 return new Car(
                         cursor.getInt(cursor.getColumnIndex("id")),
@@ -196,7 +191,7 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
         }
     }
 
-    private IEmployee employeeMapper(Cursor cursor) {
+    private IEmployee employeeMapper(Cursor cursor) throws InvalidParamException {
         switch (cursor.getString(cursor.getColumnIndex("role"))){
             case "Programmer" :
                 return new Programmer(
@@ -206,7 +201,7 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
                         cursor.getInt(cursor.getColumnIndex("birthYear")),
                         cursor.getDouble(cursor.getColumnIndex("monthlySalary")),
                         cursor.getInt(cursor.getColumnIndex("nbProjects")),
-                        cursor.getDouble(cursor.getColumnIndex("occupationRate"))
+                        cursor.getDouble(cursor.getColumnIndex("rate"))
                         );
             case "Tester":
                 return new Tester(
@@ -216,7 +211,7 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
                         cursor.getInt(cursor.getColumnIndex("birthYear")),
                         cursor.getDouble(cursor.getColumnIndex("monthlySalary")),
                         cursor.getInt(cursor.getColumnIndex("nbBugs")),
-                        cursor.getDouble(cursor.getColumnIndex("occupationRate"))
+                        cursor.getDouble(cursor.getColumnIndex("rate"))
                 );
             case "Manager":
                 return new Manager(
@@ -226,7 +221,7 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
                         cursor.getInt(cursor.getColumnIndex("birthYear")),
                         cursor.getDouble(cursor.getColumnIndex("monthlySalary")),
                         cursor.getInt(cursor.getColumnIndex("nbClients")),
-                        cursor.getDouble(cursor.getColumnIndex("occupationRate"))
+                        cursor.getDouble(cursor.getColumnIndex("rate"))
                 );
             default:
                 return null;

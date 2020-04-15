@@ -6,11 +6,11 @@ import java.util.Calendar;
 
 public abstract class Employee implements IEmployee {
 
-    Employee(int id, String name, int age, int birthYear, double monthlySalary, double occupationRate) {
+    Employee(int id, String name, int age, int birthYear, double monthlySalary, double occupationRate) throws InvalidParamException {
         this.id = id;
         this.name = name;
         this.age = age;
-        this.birthYear = birthYear;
+        this.setBirthYear(birthYear);
         this.monthlySalary = monthlySalary;
         this.setOccupationRate(occupationRate);
     }
@@ -21,7 +21,6 @@ public abstract class Employee implements IEmployee {
     private int age;
     private int birthYear;
     private double monthlySalary;
-    private double rate;
 
     public int getId() {
         return id;
@@ -65,21 +64,14 @@ public abstract class Employee implements IEmployee {
         this.monthlySalary = monthlySalary;
     }
 
-    public double getRate() {
-        return rate;
-    }
-
-    public void setRate(double rate) {
-        this.rate = rate;
-    }
-
     public double getOccupationRate() {
         return occupationRate;
     }
 
     public void setOccupationRate(double occupationRate) {
         if (occupationRate > 1) this.occupationRate = 1;
-        if (occupationRate < 0.1) this.occupationRate = 0.1;
+        else if (occupationRate < 0.1) this.occupationRate = 0.1;
+        else this.occupationRate = occupationRate;
     }
     @Override
     public abstract String getRole();
