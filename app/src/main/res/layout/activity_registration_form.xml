@@ -23,6 +23,12 @@
                 android:layout_marginTop="5dp"
                 android:textSize="25sp"
                 android:background="#0A76ED"
+                android:fontFamily="cursive"
+                android:textStyle="bold"
+                android:shadowColor="#F5A623"
+                android:shadowDx="12"
+                android:shadowDy="12"
+                android:shadowRadius="8"
                 android:text="@string/registration_form"/>
         </LinearLayout>
 
@@ -62,6 +68,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/EmpLName"
                 android:textSize="17sp"
+                android:textColor="#000"
                 android:text="@string/employee_last_name"
                 android:layout_weight="1"
                 />
@@ -86,6 +93,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/EmpBirthYear"
                 android:textSize="17sp"
+                android:textColor="#000"
                 android:text="@string/employee_birth_year"
                 android:layout_weight="1"
                 />
@@ -111,6 +119,7 @@
                 android:id="@+id/EmpMonthlySalary"
                 android:textSize="17sp"
                 android:text="@string/monthly_salary"
+                android:textColor="#000"
                 android:layout_weight="1"/>
             <EditText
                 android:layout_width="0dp"
@@ -133,6 +142,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/EmpOccupationRate"
                 android:textSize="17sp"
+                android:textColor="#000"
                 android:text="@string/occupation_rate"
                 android:layout_weight="1"
                 />
@@ -157,6 +167,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/EmpEmployeeID"
                 android:textSize="17sp"
+                android:textColor="#000"
                 android:text="@string/employee_id"
                 android:layout_weight="1"
                 />
@@ -180,6 +191,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/EmpType"
                 android:textSize="17sp"
+                android:textColor="#000"
                 android:text="@string/employee_type"
                 android:layout_weight="1"
                 />
@@ -230,6 +242,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/EmpVehicle"
                 android:textSize="17sp"
+                android:textColor="#000"
                 android:text="@string/vehicle"
                 android:layout_weight="1"/>
             <RadioGroup
@@ -271,6 +284,7 @@
                 android:id="@+id/empCarType"
                 android:textSize="17sp"
                 android:text="@string/car_type"
+                android:textColor="#000"
                 android:layout_weight="1"/>
             <EditText
                 android:layout_width="0dp"
@@ -324,6 +338,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/EmpVModel"
                 android:textSize="17sp"
+                android:textColor="#000"
                 android:text="@string/vehicle_model"
                 android:layout_weight="1"/>
             <EditText
@@ -347,6 +362,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/EmpPlateNumber"
                 android:textSize="17sp"
+                android:textColor="#000"
                 android:text="@string/plate_number"
                 android:layout_weight="1"/>
             <EditText
@@ -371,6 +387,7 @@
                 android:id="@+id/VColor"
                 android:textSize="17sp"
                 android:text="@string/vehicle_color"
+                android:textColor="#000"
                 android:layout_weight="1"/>
             <Spinner
                 android:id="@+id/VColorSpinner"
