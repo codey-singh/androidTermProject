@@ -25,7 +25,7 @@ import com.example.androidtermproject.models.Programmer;
 import com.example.androidtermproject.models.Tester;
 
 public class EmployeeDetail extends AppCompatActivity {
-    TextView name,age,occupationRate, hasACarOrBike,
+    TextView name,post,age,occupationRate, hasACarOrBike,
             annualIncome, carModelDetails, plateDetails,
             colorDetails, typeDetails, hasSideCar, achievementDisplay;
     LinearLayout carTypeLL, hasSideLL;
@@ -38,6 +38,7 @@ public class EmployeeDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee_detail);
         name=findViewById(R.id.nameDetails);
+        post=findViewById(R.id.postDetails);
         age=findViewById(R.id.ageDetails);
         hasACarOrBike = findViewById(R.id.hasCarOrBike);
         occupationRate=findViewById(R.id.occupationRateDetails);
@@ -55,7 +56,8 @@ public class EmployeeDetail extends AppCompatActivity {
 
         int employeeId = employee.getId();
 
-        name.setText(""+employee.getName() + ", a " +employee.getRole());
+        name.setText(""+employee.getName());
+        post.setText(""+employee.getRole());
         age.setText(""+employee.getAge());
 
         dataService = DatabaseHelper.getInstance(this);

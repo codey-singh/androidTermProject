@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bkg"
     tools:context=".EmployeeDetail"
     android:orientation="vertical">
 
@@ -19,6 +20,8 @@
             android:paddingBottom="10dp"
             android:gravity="center"
             android:textSize="17sp"
+            android:background="#FFF"
+            android:textColor="#0079FC"
             android:id="@+id/employeeDetails"
             android:layout_weight="1"/>
     </LinearLayout>
@@ -36,6 +39,8 @@
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:textSize="17sp"
+            android:background="#FFF"
+            android:textColor="#0079FC"
             android:id="@+id/nameDisplay"
             android:layout_weight="1"/>
 
@@ -46,10 +51,40 @@
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:textSize="17sp"
+            android:background="#FFF"
+            android:textColor="#0079FC"
             android:id="@+id/nameDetails"
             android:layout_weight="1"/>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Post : "
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textSize="17sp"
+            android:background="#FFF"
+            android:textColor="#0079FC"
+            android:id="@+id/postDisplay"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textSize="17sp"
+            android:background="#FFF"
+            android:textColor="#0079FC"
+            android:id="@+id/postDetails"
+            android:layout_weight="1"/>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -62,6 +97,8 @@
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:textSize="17sp"
+            android:background="#FFF"
+            android:textColor="#0079FC"
             android:id="@+id/ageDisplay"
             android:layout_weight="1"/>
 
@@ -72,6 +109,8 @@
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:textSize="17sp"
+            android:background="#FFF"
+            android:textColor="#0079FC"
             android:id="@+id/ageDetails"
             android:layout_weight="1"/>
     </LinearLayout>
@@ -87,6 +126,8 @@
             android:layout_weight="1"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
+            android:background="#FFF"
+            android:textColor="#0079FC"
             android:text=" "
             android:textSize="17sp" />
 
@@ -104,6 +145,8 @@
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:textSize="17sp"
+            android:background="#FFF"
+            android:textColor="#0079FC"
             android:id="@+id/carModel"
             android:layout_weight="1"/>
 
@@ -113,6 +156,8 @@
             android:text=""
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
+            android:background="#FFF"
+            android:textColor="#0079FC"
             android:textSize="17sp"
             android:id="@+id/carModelDetails"
             android:layout_weight="1"/>
@@ -130,6 +175,8 @@
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:textSize="17sp"
+            android:background="#FFF"
+            android:textColor="#0079FC"
             android:id="@+id/plateDisplay"
             android:layout_weight="1"/>
 
@@ -140,6 +187,8 @@
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:textSize="17sp"
+            android:background="#FFF"
+            android:textColor="#0079FC"
             android:id="@+id/plateDetails"
             android:layout_weight="1"/>
     </LinearLayout>
@@ -154,6 +203,8 @@
             android:text="* Color : "
             android:textSize="17sp"
             android:paddingLeft="5dp"
+            android:background="#FFF"
+            android:textColor="#0079FC"
             android:paddingRight="5dp"
             android:id="@+id/colorDisplay"
             android:layout_weight="1"/>
@@ -164,6 +215,8 @@
             android:text=""
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
+            android:background="#FFF"
+            android:textColor="#0079FC"
             android:textSize="17sp"
             android:id="@+id/colorDetails"
             android:layout_weight="1"/>
@@ -181,6 +234,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:paddingLeft="5dp"
+            android:background="#FFF"
+            android:textColor="#0079FC"
             android:paddingRight="5dp"
             android:text=" "
             android:textSize="17sp" />
@@ -202,6 +257,8 @@
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:textSize="17sp"
+            android:background="#FFF"
+            android:textColor="#0079FC"
             android:id="@+id/typeDisplay"
             android:layout_weight="1"/>
 
@@ -212,6 +269,8 @@
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:textSize="17sp"
+            android:background="#FFF"
+            android:textColor="#0079FC"
             android:id="@+id/typeDetails"
             android:layout_weight="1"/>
     </LinearLayout>
@@ -226,6 +285,8 @@
             android:text="Occupation Rate : "
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
+            android:background="#FFF"
+            android:textColor="#0079FC"
             android:textSize="17sp"
             android:id="@+id/occupationRateDisplay"
             android:layout_weight="1"/>
@@ -237,6 +298,8 @@
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:textSize="17sp"
+            android:background="#FFF"
+            android:textColor="#0079FC"
             android:id="@+id/occupationRateDetails"
             android:layout_weight="1"/>
     </LinearLayout>
@@ -251,6 +314,8 @@
             android:text="Annual Income : "
             android:textSize="17sp"
             android:paddingLeft="5dp"
+            android:background="#FFF"
+            android:textColor="#0079FC"
             android:paddingRight="5dp"
             android:id="@+id/annualIncomeDisplay"
             android:layout_weight="1"/>
@@ -262,6 +327,8 @@
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:textSize="17sp"
+            android:background="#FFF"
+            android:textColor="#0079FC"
             android:id="@+id/annualIncomeDetails"
             android:layout_weight="1"/>
     </LinearLayout>
@@ -277,6 +344,8 @@
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:textSize="17sp"
+            android:background="#FFF"
+            android:textColor="#0079FC"
             android:id="@+id/achievementDisplay"
             android:layout_weight="1"/>
     </LinearLayout>
@@ -285,6 +354,8 @@
         android:layout_height="wrap_content"
         android:text="DELETE THIS RECORD"
         android:layout_gravity="center"
+        android:background="#0079FC"
+        android:textColor="#FFF"
         android:onClick="deleteEmployee"/>
 
 </LinearLayout>
