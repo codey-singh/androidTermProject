@@ -215,14 +215,17 @@
                 android:text="@string/employee_type"
                 android:layout_weight="1"
                 />
+
             <Spinner
                 android:id="@+id/EmpTypeSpinner"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:entries="@array/EmployeeType"
-                android:scrollbarSize="10dp"
                 android:layout_weight="1"
-                />
+                android:entries="@array/EmployeeType"
+                android:fontFamily="cursive"
+                android:scrollbarSize="10dp"
+                android:spinnerMode="dropdown"
+                android:textColor="#0079FC" />
 
         </LinearLayout>
 
@@ -429,6 +432,8 @@
                 android:id="@+id/VColorSpinner"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="cursive"
+                android:textColor="#0079FC"
                 android:entries="@array/color"
                 android:scrollbarSize="10dp"
                 android:layout_weight="1"/>

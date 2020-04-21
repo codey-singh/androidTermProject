@@ -2,15 +2,20 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bkg"
     android:orientation="vertical">
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/searchBar"
+        android:textColorHint="#0079FC"
+        android:textColor="#FFF"
         android:hint="Search Name"
         />
     <ListView
         android:id="@+id/List_Employees"
+        android:background="#FFF"
+        android:textColor="#FFF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -18,6 +23,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Register New User"
+        android:textColor="#FFF"
+        android:background="#0079FC"
         android:layout_gravity="center"
         android:onClick="goToReg"
         />
