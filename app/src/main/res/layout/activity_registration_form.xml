@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#C6DEF7"
+    android:background="@drawable/bkg"
+
     tools:context=".RegistrationForm">
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,13 +23,14 @@
                 android:textAlignment="center"
                 android:layout_marginTop="5dp"
                 android:textSize="25sp"
-                android:background="#0A76ED"
+                android:background="#FFFFFF"
                 android:fontFamily="cursive"
                 android:textStyle="bold"
-                android:shadowColor="#F5A623"
+                android:shadowColor="#0079FC"
                 android:shadowDx="12"
                 android:shadowDy="12"
                 android:shadowRadius="8"
+                android:textColor="#000000"
                 android:text="@string/registration_form"/>
         </LinearLayout>
 
@@ -44,7 +46,7 @@
                 android:id="@+id/EmpFName"
                 android:textSize="17sp"
                 android:text="@string/employee_first_name"
-                android:textColor="#000"
+                android:textColor="#0079FC"
                 android:layout_weight="1"
                 />
             <EditText
@@ -53,6 +55,8 @@
                 android:id="@+id/FirstName"
                 android:hint="@string/first_name"
                 android:layout_weight="1"
+                android:textColorHint="#0079FC"
+                android:textColor="#FFF"
                 android:inputType="textPersonName" />
 
         </LinearLayout>
@@ -68,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/EmpLName"
                 android:textSize="17sp"
-                android:textColor="#000"
+                android:textColor="#0079FC"
                 android:text="@string/employee_last_name"
                 android:layout_weight="1"
                 />
@@ -78,6 +82,8 @@
                 android:id="@+id/LastName"
                 android:hint="@string/last_name"
                 android:layout_weight="1"
+                android:textColorHint="#0079FC"
+                android:textColor="#FFF"
                 android:inputType="text"/>
 
         </LinearLayout>
@@ -93,7 +99,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/EmpBirthYear"
                 android:textSize="17sp"
-                android:textColor="#000"
+                android:textColor="#0079FC"
                 android:text="@string/employee_birth_year"
                 android:layout_weight="1"
                 />
@@ -103,6 +109,8 @@
                 android:id="@+id/birth_year"
                 android:hint="@string/birth_year"
                 android:layout_weight="1"
+                android:textColorHint="#0079FC"
+                android:textColor="#FFF"
                 android:inputType="date"/>
 
         </LinearLayout>
@@ -119,13 +127,15 @@
                 android:id="@+id/EmpMonthlySalary"
                 android:textSize="17sp"
                 android:text="@string/monthly_salary"
-                android:textColor="#000"
+                android:textColor="#0079FC"
                 android:layout_weight="1"/>
             <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/monthlySalary"
                 android:hint="@string/monthly_salary"
+                android:textColorHint="#0079FC"
+                android:textColor="#FFF"
                 android:layout_weight="1"
                 android:inputType="numberDecimal"/>
 
@@ -142,7 +152,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/EmpOccupationRate"
                 android:textSize="17sp"
-                android:textColor="#000"
+                android:textColor="#0079FC"
                 android:text="@string/occupation_rate"
                 android:layout_weight="1"
                 />
@@ -152,6 +162,8 @@
                 android:id="@+id/OccupationRate"
                 android:hint="Occupation rate"
                 android:layout_weight="1"
+                android:textColorHint="#0079FC"
+                android:textColor="#FFF"
                 android:inputType="numberDecimal"/>
 
         </LinearLayout>
@@ -167,7 +179,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/EmpEmployeeID"
                 android:textSize="17sp"
-                android:textColor="#000"
+                android:textColor="#0079FC"
                 android:text="@string/employee_id"
                 android:layout_weight="1"
                 />
@@ -175,6 +187,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/EmployeeID"
+                android:textColorHint="#0079FC"
+                android:textColor="#FFF"
                 android:hint="@string/employee_id"
                 android:layout_weight="1"
                 android:inputType="number"/>
@@ -191,7 +205,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/EmpType"
                 android:textSize="17sp"
-                android:textColor="#000"
+                android:textColor="#0079FC"
                 android:text="@string/employee_type"
                 android:layout_weight="1"
                 />
@@ -220,12 +234,15 @@
                 android:id="@+id/EmpManual_Data"
                 android:textSize="17sp"
                 android:text="@string/manual_data"
+                android:textColor="#0079FC"
                 android:layout_weight="1" />
             <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/Manual_Data"
                 android:hint="@string/manual_data"
+                android:textColorHint="#0079FC"
+                android:textColor="#FFF"
                 android:layout_weight="1"
                 android:inputType="number"/>
 
@@ -242,7 +259,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/EmpVehicle"
                 android:textSize="17sp"
-                android:textColor="#000"
+                android:textColor="#0079FC"
                 android:text="@string/vehicle"
                 android:layout_weight="1"/>
             <RadioGroup
@@ -258,12 +275,14 @@
                     android:id="@+id/EmpCar"
                     android:text="@string/car"
                     android:textSize="17sp"
+                    android:textColor="#0079FC"
                     android:layout_weight="1"
                     android:checked="true"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:id="@+id/EmpMotorBike"
+                    android:textColor="#0079FC"
                     android:layout_weight="1"
                     android:textSize="17sp"
                     android:text="@string/motorbike"/>
@@ -284,13 +303,15 @@
                 android:id="@+id/empCarType"
                 android:textSize="17sp"
                 android:text="@string/car_type"
-                android:textColor="#000"
+                android:textColor="#0079FC"
                 android:layout_weight="1"/>
             <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/carType"
                 android:hint="@string/car_type"
+                android:textColorHint="#0079FC"
+                android:textColor="#FFF"
                 android:layout_weight="1"
                 android:inputType="text"/>
 
@@ -310,6 +331,7 @@
                 android:id="@+id/EmpSideCarDisplay"
                 android:textSize="17sp"
                 android:text="@string/has_side_car"
+                android:textColor="#0079FC"
                 android:layout_weight="1"
                 android:inputType="text"/>
             <Switch
@@ -322,7 +344,7 @@
                 android:textOff="@string/no"
                 android:textOn="@string/yes"
                 android:textSize="17sp"
-                android:textColor="#f00"
+                android:textColor="#0079FC"
                 />
         </LinearLayout>
 
@@ -338,7 +360,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/EmpVModel"
                 android:textSize="17sp"
-                android:textColor="#000"
+                android:textColor="#0079FC"
                 android:text="@string/vehicle_model"
                 android:layout_weight="1"/>
             <EditText
@@ -347,6 +369,8 @@
                 android:id="@+id/VehicleModel"
                 android:hint="@string/vehicle_model"
                 android:layout_weight="1"
+                android:textColorHint="#0079FC"
+                android:textColor="#FFF"
                 android:inputType="text"/>
 
         </LinearLayout>
@@ -362,7 +386,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/EmpPlateNumber"
                 android:textSize="17sp"
-                android:textColor="#000"
+                android:textColor="#0079FC"
                 android:text="@string/plate_number"
                 android:layout_weight="1"/>
             <EditText
@@ -370,6 +394,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/PlateNumber"
                 android:hint="@string/plate_number"
+                android:textColorHint="#0079FC"
+                android:textColor="#FFF"
                 android:layout_weight="1"
                 android:inputType="text"/>
 
@@ -387,7 +413,7 @@
                 android:id="@+id/VColor"
                 android:textSize="17sp"
                 android:text="@string/vehicle_color"
-                android:textColor="#000"
+                android:textColor="#0079FC"
                 android:layout_weight="1"/>
             <Spinner
                 android:id="@+id/VColorSpinner"
