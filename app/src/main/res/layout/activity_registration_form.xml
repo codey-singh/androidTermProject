@@ -55,6 +55,7 @@
                 android:id="@+id/FirstName"
                 android:hint="@string/first_name"
                 android:layout_weight="1"
+                android:fontFamily="cursive"
                 android:textColorHint="#0079FC"
                 android:textColor="#FFF"
                 android:inputType="textPersonName" />
@@ -82,6 +83,7 @@
                 android:id="@+id/LastName"
                 android:hint="@string/last_name"
                 android:layout_weight="1"
+                android:fontFamily="cursive"
                 android:textColorHint="#0079FC"
                 android:textColor="#FFF"
                 android:inputType="text"/>
@@ -109,6 +111,7 @@
                 android:id="@+id/birth_year"
                 android:hint="@string/birth_year"
                 android:layout_weight="1"
+                android:fontFamily="cursive"
                 android:textColorHint="#0079FC"
                 android:textColor="#FFF"
                 android:inputType="date"/>
@@ -137,6 +140,7 @@
                 android:textColorHint="#0079FC"
                 android:textColor="#FFF"
                 android:layout_weight="1"
+                android:fontFamily="cursive"
                 android:inputType="numberDecimal"/>
 
         </LinearLayout>
@@ -164,6 +168,7 @@
                 android:layout_weight="1"
                 android:textColorHint="#0079FC"
                 android:textColor="#FFF"
+                android:fontFamily="cursive"
                 android:inputType="numberDecimal"/>
 
         </LinearLayout>
@@ -191,6 +196,7 @@
                 android:textColor="#FFF"
                 android:hint="@string/employee_id"
                 android:layout_weight="1"
+                android:fontFamily="cursive"
                 android:inputType="number"/>
 
         </LinearLayout>
@@ -243,6 +249,7 @@
                 android:hint="@string/manual_data"
                 android:textColorHint="#0079FC"
                 android:textColor="#FFF"
+                android:fontFamily="cursive"
                 android:layout_weight="1"
                 android:inputType="number"/>
 
@@ -312,6 +319,7 @@
                 android:hint="@string/car_type"
                 android:textColorHint="#0079FC"
                 android:textColor="#FFF"
+                android:fontFamily="cursive"
                 android:layout_weight="1"
                 android:inputType="text"/>
 
@@ -369,6 +377,7 @@
                 android:id="@+id/VehicleModel"
                 android:hint="@string/vehicle_model"
                 android:layout_weight="1"
+                android:fontFamily="cursive"
                 android:textColorHint="#0079FC"
                 android:textColor="#FFF"
                 android:inputType="text"/>
@@ -396,6 +405,7 @@
                 android:hint="@string/plate_number"
                 android:textColorHint="#0079FC"
                 android:textColor="#FFF"
+                android:fontFamily="cursive"
                 android:layout_weight="1"
                 android:inputType="text"/>
 
