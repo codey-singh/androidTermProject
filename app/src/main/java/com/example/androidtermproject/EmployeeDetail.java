@@ -1,7 +1,9 @@
 package com.example.androidtermproject;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -97,10 +99,32 @@ public class EmployeeDetail extends AppCompatActivity {
     }
     public void deleteEmployee(View view)
     {
-        dataService.removeEmployee(employee.getId());
-        dataService.removeVehicle(v.getVehicleId());
-        Intent intent=new Intent(this,MainActivity.class);
-        startActivity(intent);
+        confirmDialog(this);
+    }
+    private void confirmDialog(EmployeeDetail e) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Remove Employee");
+        builder.setMessage("Do you want remove this employee?");
+        builder.setCancelable(false);
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dataService.removeEmployee(employee.getId());
+                dataService.removeVehicle(v.getVehicleId());
+                Intent intent=new Intent(e,MainActivity.class);
+                startActivity(intent);
+                Toast.makeText(getApplicationContext(), "Employee record deleted", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(getApplicationContext(), "Deletion cancelled", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        builder.show();
     }
 
 }

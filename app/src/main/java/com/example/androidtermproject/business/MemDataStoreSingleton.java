@@ -22,18 +22,7 @@ public class MemDataStoreSingleton implements IDataService {
     private ArrayList<IVehicle> vehicles = new ArrayList<>();
 
     private MemDataStoreSingleton() throws InvalidParamException {
-        Car car1=new Car(1,"Honda","A1234","Red","Sedan","4-Door",100);
-        Car car2=new Car(2,"Toyota","B1234","Black","Sedan","4-Door",200);
-        Motorcycle bike1=new Motorcycle(3,"Suzuki","C007","Blue","Sports bike",false,300);
-        Tester tester = new Tester(100,"John Doe",25,1995,3000,100, 0.2);
-        Programmer programmer = new Programmer(200,"Denny Thomas",30,1990,4500,100, 0.2);
-        Manager manager = new Manager(300,"Silvi Jane",40,1980,7500,4, 0.2);
-        vehicles.add(car1);
-        vehicles.add(car2);
-        vehicles.add(bike1);
-        employees.add(tester);
-        employees.add(manager);
-        employees.add(programmer);
+
     }
 
     private static MemDataStoreSingleton instance;

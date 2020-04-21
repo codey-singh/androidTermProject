@@ -2,20 +2,17 @@ package com.example.androidtermproject;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.androidtermproject.business.DatabaseHelper;
 import com.example.androidtermproject.business.IDataService;
-import com.example.androidtermproject.business.MemDataStoreSingleton;
 import com.example.androidtermproject.business.exceptions.InvalidParamException;
 import com.example.androidtermproject.models.Employee;
 import com.example.androidtermproject.models.IEmployee;
@@ -86,5 +83,7 @@ public class MainActivity extends AppCompatActivity {
     public void goToReg(View view) {
         Intent intent = new Intent(this, RegistrationForm.class);
         startActivity(intent);
+
     }
+
 }
