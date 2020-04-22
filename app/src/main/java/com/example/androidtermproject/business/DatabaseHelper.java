@@ -53,7 +53,7 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
         ArrayList<IEmployee> employees = new ArrayList<>();
         Cursor cursor = db.rawQuery("SELECT * FROM Employees", new String[]{});
         cursor.moveToFirst();
-        while(!cursor.isAfterLast()){
+        while (!cursor.isAfterLast()) {
             employees.add(employeeMapper(cursor));
             cursor.moveToNext();
         }
@@ -64,7 +64,7 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
     public boolean addEmployee(IEmployee employee) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
-        switch (employee.getRole()){
+        switch (employee.getRole()) {
             case "Programmer":
                 values.put("id", employee.getEmpId());
                 values.put("name", ((Programmer) employee).getName());
@@ -100,7 +100,20 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
     @Override
     public boolean removeEmployee(int id) {
         SQLiteDatabase db = getWritableDatabase();
-        return db.delete("Employees", "id = ?", new String[] { ""+id }) > 0;
+        return db.delete("Employees", "id = ?", new String[]{"" + id}) > 0;
+    }
+
+    @Override
+    public boolean updateEmployee(int id, String new_name, int new_age, int new_birthyear, double new_salary, double new_rate) {
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("name", new_name);
+        values.put("age", new_age);
+        values.put("birthYear", new_birthyear);
+        values.put("monthlySalary", new_salary);
+        values.put("rate", new_rate);
+        return db.update("Employees", values, "id = ?", new String[]{"" + id}) > 0;
+
     }
 
     @Override
@@ -108,7 +121,7 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM Employees", new String[]{});
         IEmployee employee = null;
-        while(!cursor.isAfterLast()){
+        while (!cursor.isAfterLast()) {
             employee = employeeMapper(cursor);
             cursor.moveToNext();
         }
@@ -126,7 +139,7 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
         ContentValues values = new ContentValues();
         switch (vehicle.getVehicleType()) {
             case "Car":
-                values.put("make", ((Car)vehicle).getMake());
+                values.put("make", ((Car) vehicle).getMake());
                 values.put("plate", ((Car) vehicle).getPlate());
                 values.put("color", ((Car) vehicle).getColor());
                 values.put("category", "Car");
@@ -135,7 +148,7 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
 
                 break;
             case "Motorcycle":
-                values.put("make", ((Motorcycle)vehicle).getMake());
+                values.put("make", ((Motorcycle) vehicle).getMake());
                 values.put("plate", ((Motorcycle) vehicle).getPlate());
                 values.put("color", ((Motorcycle) vehicle).getColor());
                 values.put("category", "Motorcycle");
@@ -151,13 +164,13 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
     @Override
     public boolean removeVehicle(int id) {
         SQLiteDatabase db = getWritableDatabase();
-        return db.delete("Vehicles", "id = ?", new String[] { ""+id }) > 0;
+        return db.delete("Vehicles", "id = ?", new String[]{"" + id}) > 0;
     }
 
     @Override
     public IVehicle getVehicleForEmployee(int eId) {
         SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM Vehicles WHERE belongsTo = ?", new String[]{""+eId});
+        Cursor cursor = db.rawQuery("SELECT * FROM Vehicles WHERE belongsTo = ?", new String[]{"" + eId});
         IVehicle vehicle = null;
         cursor.moveToFirst();
         vehicle = vehicleMapper(cursor);
@@ -165,7 +178,7 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
     }
 
     private IVehicle vehicleMapper(Cursor cursor) {
-        switch(cursor.getString(cursor.getColumnIndex("category"))) {
+        switch (cursor.getString(cursor.getColumnIndex("category"))) {
             case "Car":
                 return new Car(
                         cursor.getInt(cursor.getColumnIndex("id")),
@@ -192,8 +205,8 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
     }
 
     private IEmployee employeeMapper(Cursor cursor) throws InvalidParamException {
-        switch (cursor.getString(cursor.getColumnIndex("role"))){
-            case "Programmer" :
+        switch (cursor.getString(cursor.getColumnIndex("role"))) {
+            case "Programmer":
                 return new Programmer(
                         cursor.getInt(cursor.getColumnIndex("id")),
                         cursor.getString(cursor.getColumnIndex("name")),
@@ -202,7 +215,7 @@ public class DatabaseHelper extends SQLiteOpenHelper implements IDataService {
                         cursor.getDouble(cursor.getColumnIndex("monthlySalary")),
                         cursor.getInt(cursor.getColumnIndex("nbProjects")),
                         cursor.getDouble(cursor.getColumnIndex("rate"))
-                        );
+                );
             case "Tester":
                 return new Tester(
                         cursor.getInt(cursor.getColumnIndex("id")),

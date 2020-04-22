@@ -43,6 +43,11 @@ public class MemDataStoreSingleton implements IDataService {
     public boolean addEmployee(IEmployee employee) {
         return employees.add(employee);
     }
+    @Override
+    public boolean updateEmployee(int id,String new_name,int new_age,int new_birthyear,double new_salary,double new_rate)
+    {
+        return true;
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override

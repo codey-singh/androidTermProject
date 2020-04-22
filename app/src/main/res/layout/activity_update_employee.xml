@@ -19,7 +19,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/RegistrationForm"
+                android:id="@+id/updateForm"
                 android:textAlignment="center"
                 android:layout_marginTop="5dp"
                 android:textSize="25sp"
@@ -52,13 +52,12 @@
             <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/EName"
+                android:id="@+id/UName"
                 android:hint="Name"
                 android:layout_weight="1"
                 android:fontFamily="cursive"
                 android:textColorHint="#0079FC"
-                android:textColor="#FFF"
-                android:inputType="textPersonName" />
+                android:textColor="#FFF"/>
 
         </LinearLayout>
 
@@ -80,13 +79,12 @@
             <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/EBirthYear"
+                android:id="@+id/UYear"
                 android:hint="Birth Year"
                 android:layout_weight="1"
                 android:fontFamily="cursive"
                 android:textColorHint="#0079FC"
-                android:textColor="#FFF"
-                android:inputType="number"/>
+                android:textColor="#FFF"/>
 
         </LinearLayout>
 
@@ -108,13 +106,12 @@
             <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/Esalary"
+                android:id="@+id/USalary"
                 android:hint="Salary"
                 android:layout_weight="1"
                 android:fontFamily="cursive"
                 android:textColorHint="#0079FC"
-                android:textColor="#FFF"
-                android:inputType="numberDecimal"/>
+                android:textColor="#FFF"/>
 
         </LinearLayout>
 
@@ -135,13 +132,12 @@
             <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/ERate"
+                android:id="@+id/URate"
                 android:hint="Occupatio Rate"
                 android:textColorHint="#0079FC"
                 android:textColor="#FFF"
                 android:layout_weight="1"
-                android:fontFamily="cursive"
-                android:inputType="numberDecimal"/>
+                android:fontFamily="cursive" />
 
         </LinearLayout>
         <LinearLayout
@@ -155,7 +151,8 @@
                 android:layout_weight="1"
                 android:text="Update"
                 android:textSize="17sp"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:onClick="update"/>
         </LinearLayout>
 
     </LinearLayout>

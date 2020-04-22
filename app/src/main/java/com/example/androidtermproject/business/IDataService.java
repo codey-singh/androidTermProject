@@ -11,6 +11,7 @@ public interface IDataService {
     ArrayList<IEmployee> getEmployees() throws InvalidParamException;
     boolean addEmployee(IEmployee employee);
     boolean removeEmployee(int id);
+    boolean updateEmployee(int id,String new_name,int new_age,int new_birthyear,double new_salary,double new_rate);
     IEmployee getEmployee(int id) throws InvalidParamException;
 
     ArrayList<IVehicle> getVehicles();
