@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.androidtermproject.business.DatabaseHelper;
 import com.example.androidtermproject.business.IDataService;
 import com.example.androidtermproject.models.Employee;
 
@@ -27,7 +28,8 @@ public class updateEmployee extends AppCompatActivity {
         rate=(EditText)findViewById(R.id.URate);
         e= (Employee) getIntent().getSerializableExtra("Employee");
         name.setText(e.getName());
-        year.setText(e.getBirthYear());
+        d = DatabaseHelper.getInstance(this);
+        year.setText(""+e.getBirthYear());
         salary.setText(""+e.getMonthlySalary());
         rate.setText(""+e.getOccupationRate());
         Toast.makeText(this,e.getName(),Toast.LENGTH_SHORT).show();
