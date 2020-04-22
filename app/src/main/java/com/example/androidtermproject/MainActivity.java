@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     ListView listview;
     IDataService dataService;
     EditText searchBar;
+    public ArrayList <IEmployee> employees= null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
         dataService = DatabaseHelper.getInstance(this);
         ListAdapter listAdapter = null;
         try {
+            employees = dataService.getEmployees();
+        } catch (InvalidParamException e) {
+            e.printStackTrace();
+        }
+        try {
             listAdapter = new ListAdapter(this, dataService.getEmployees());
         } catch (InvalidParamException e) {
             e.printStackTrace();
@@ -42,12 +48,8 @@ public class MainActivity extends AppCompatActivity {
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ArrayList <IEmployee> employees= null;
-                try {
-                    employees = dataService.getEmployees();
-                } catch (InvalidParamException e) {
-                    e.printStackTrace();
-                }
+
+
                 IEmployee e=(Employee) employees.get(position);
                 Intent intent=new Intent(MainActivity.this,EmployeeDetail.class);
                 intent.putExtra("Employee", (Serializable) e);
@@ -62,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 // TODO Auto-generated method stub
                 //MainActivity.this.adapt.getFilter().filter(s);
                 String searchString=searchBar.getText().toString();
-                finalListAdapter.filter(searchString);
+                 employees=finalListAdapter.filter(searchString);
             }
 
             @Override

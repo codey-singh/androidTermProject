@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Filterable;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,7 +20,7 @@ import com.example.androidtermproject.models.IEmployee;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListAdapter extends ArrayAdapter<IEmployee> {
+public class ListAdapter extends ArrayAdapter<IEmployee> implements Filterable {
     private List<IEmployee> EmployeesData;
     private ArrayList<IEmployee> EmployeeOrigin;
     Context mContext;
@@ -68,7 +69,7 @@ public class ListAdapter extends ArrayAdapter<IEmployee> {
         // Return the completed view to render on scree
         return convertView;
     }
-    public void filter(String charText) {
+    public ArrayList<IEmployee> filter(String charText) {
         charText = charText.toLowerCase();
         EmployeesData.clear();
         if (charText.length() == 0) {
@@ -83,5 +84,6 @@ public class ListAdapter extends ArrayAdapter<IEmployee> {
             }
         }
         notifyDataSetChanged();
+        return  (ArrayList<IEmployee>)EmployeesData;
     }
 }
