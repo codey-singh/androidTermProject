@@ -49,16 +49,17 @@
                 android:textColor="#0079FC"
                 android:layout_weight="1"
                 />
+
             <EditText
+                android:id="@+id/FirstName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/FirstName"
-                android:hint="@string/first_name"
                 android:layout_weight="1"
-                android:fontFamily="cursive"
-                android:textColorHint="#0079FC"
+                android:fontFamily="@font/allan"
+                android:hint="@string/first_name"
+                android:inputType="textPersonName"
                 android:textColor="#FFF"
-                android:inputType="textPersonName" />
+                android:textColorHint="#0079FC" />
 
         </LinearLayout>
 
@@ -83,7 +84,7 @@
                 android:id="@+id/LastName"
                 android:hint="@string/last_name"
                 android:layout_weight="1"
-                android:fontFamily="cursive"
+                android:fontFamily="@font/allan"
                 android:textColorHint="#0079FC"
                 android:textColor="#FFF"
                 android:inputType="text"/>
@@ -111,7 +112,7 @@
                 android:id="@+id/birth_year"
                 android:hint="@string/birth_year"
                 android:layout_weight="1"
-                android:fontFamily="cursive"
+                android:fontFamily="@font/allan"
                 android:textColorHint="#0079FC"
                 android:textColor="#FFF"
                 android:inputType="date"/>
@@ -140,7 +141,7 @@
                 android:textColorHint="#0079FC"
                 android:textColor="#FFF"
                 android:layout_weight="1"
-                android:fontFamily="cursive"
+                android:fontFamily="@font/allan"
                 android:inputType="numberDecimal"/>
 
         </LinearLayout>
@@ -168,7 +169,7 @@
                 android:layout_weight="1"
                 android:textColorHint="#0079FC"
                 android:textColor="#FFF"
-                android:fontFamily="cursive"
+                android:fontFamily="@font/allan"
                 android:inputType="numberDecimal"/>
 
         </LinearLayout>
@@ -196,7 +197,7 @@
                 android:textColor="#FFF"
                 android:hint="@string/employee_id"
                 android:layout_weight="1"
-                android:fontFamily="cursive"
+                android:fontFamily="@font/allan"
                 android:inputType="number"/>
 
         </LinearLayout>
@@ -222,7 +223,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:entries="@array/EmployeeType"
-                android:fontFamily="cursive"
+                android:fontFamily="@font/allan"
                 android:scrollbarSize="10dp"
                 android:spinnerMode="dropdown"
                 android:textColor="#0079FC" />
@@ -252,7 +253,7 @@
                 android:hint="@string/manual_data"
                 android:textColorHint="#0079FC"
                 android:textColor="#FFF"
-                android:fontFamily="cursive"
+                android:fontFamily="@font/allan"
                 android:layout_weight="1"
                 android:inputType="number"/>
 
@@ -285,6 +286,7 @@
                     android:id="@+id/EmpCar"
                     android:text="@string/car"
                     android:textSize="17sp"
+                    android:fontFamily="@font/allan"
                     android:textColor="#0079FC"
                     android:layout_weight="1"
                     android:checked="true"/>
@@ -293,6 +295,7 @@
                     android:layout_height="0dp"
                     android:id="@+id/EmpMotorBike"
                     android:textColor="#0079FC"
+                    android:fontFamily="@font/allan"
                     android:layout_weight="1"
                     android:textSize="17sp"
                     android:text="@string/motorbike"/>
@@ -322,7 +325,7 @@
                 android:hint="@string/car_type"
                 android:textColorHint="#0079FC"
                 android:textColor="#FFF"
-                android:fontFamily="cursive"
+                android:fontFamily="@font/allan"
                 android:layout_weight="1"
                 android:inputType="text"/>
 
@@ -380,7 +383,7 @@
                 android:id="@+id/VehicleModel"
                 android:hint="@string/vehicle_model"
                 android:layout_weight="1"
-                android:fontFamily="cursive"
+                android:fontFamily="@font/allan"
                 android:textColorHint="#0079FC"
                 android:textColor="#FFF"
                 android:inputType="text"/>
@@ -408,7 +411,7 @@
                 android:hint="@string/plate_number"
                 android:textColorHint="#0079FC"
                 android:textColor="#FFF"
-                android:fontFamily="cursive"
+                android:fontFamily="@font/allan"
                 android:layout_weight="1"
                 android:inputType="text"/>
 
@@ -432,7 +435,7 @@
                 android:id="@+id/VColorSpinner"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:fontFamily="cursive"
+                android:fontFamily="@font/allan"
                 android:textColor="#0079FC"
                 android:entries="@array/color"
                 android:scrollbarSize="10dp"
