@@ -24,6 +24,8 @@ import com.example.androidtermproject.models.Motorcycle;
 import com.example.androidtermproject.models.Programmer;
 import com.example.androidtermproject.models.Tester;
 
+import java.io.Serializable;
+
 public class EmployeeDetail extends AppCompatActivity {
     TextView name,post,age,occupationRate, hasACarOrBike,
             annualIncome, carModelDetails, plateDetails,
@@ -97,6 +99,13 @@ public class EmployeeDetail extends AppCompatActivity {
             achievementDisplay.setText("He/She has completed " + projectCount + " Projects" );
         }
 
+
+    }
+    public void updateEmployee(View view)
+    {
+        Intent intent=new Intent(this,updateEmployee.class);
+        intent.putExtra("Employee", (Serializable) employee);
+        startActivity(intent);
 
     }
     public void deleteEmployee(View view)

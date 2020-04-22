@@ -28,7 +28,6 @@
     <string name="car_type">Car Type</string>
 
 
-
     <string-array name="EmployeeType">
         <item>Choose a Type</item>
         <item>Manager</item>
